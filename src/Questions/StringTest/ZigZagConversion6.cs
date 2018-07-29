@@ -5,10 +5,14 @@ namespace src.Questions.StringTest {
                 return s;
             }
             var result = string.Empty;
-            var stringArray = new char[s.Length * numRows, numRows];
-            for (int i = 0; i < s.Length; i++) {
-
+            var stringArray = new char[numRows, s.Length * numRows];
+            stringArray[0, 0] = s[0];
+            // var charIdx = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                                
             }
+            return result;
         }
     }
 }
