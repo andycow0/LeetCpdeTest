@@ -10,7 +10,7 @@ namespace LeetCodeTest.ArrayTest
             var result = string.Empty;
 
             var charArray = new Char[s.Length];
-            var dic = "abcdefghijklmnopqrstuvwxyz";
+            
             for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] >= 'A' && s[i] <= 'Z')

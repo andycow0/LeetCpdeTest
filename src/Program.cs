@@ -1,6 +1,7 @@
 ﻿using System;
 using LeetCodeTest.ArrayTest;
 using LeetCpdeTest.Questions.Numers;
+using src.Questions.LinkedListTest;
 using src.Questions.Numers;
 using src.Questions.StringTest;
 
@@ -11,7 +12,21 @@ namespace LeetCodeTest {
             // var target = 9;
             // var twoSumResult = TwoSum_1.TwoSum(twoSumNums, 9);
             // var z = "PAYPALISHIRING";
-            var addDigis = AddDigi258.AddDigits(38);
+
+            // ListNode listNode = new ListNode (4) {
+            //     next = new ListNode (5) {
+            //     next = new ListNode (1) {
+            //     next = new ListNode (9) { }
+            //     }
+            //     }
+            // };
+            // var aa = DeleteNodeList_203.RemoveElements (listNode, 9);
+
+            var nums = new int[] {};
+             
+            var dupl = ContainsDuplicate_217.ContainsDuplicate (nums);
+
+            var addDigis = AddDigi258.AddDigits (38);
 
             var a = "THIS";
             Console.WriteLine (a.Length);
