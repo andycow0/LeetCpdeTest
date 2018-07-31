@@ -5,12 +5,9 @@ using src.Questions.LinkedListTest;
 using src.Questions.Numers;
 using src.Questions.StringTest;
 
-namespace LeetCodeTest
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace LeetCodeTest {
+    class Program {
+        static void Main (string[] args) {
             // var twoSumNums = new int[4] { 2, 7, 11, 15 };
             // var target = 9;
             // var twoSumResult = TwoSum_1.TwoSum(twoSumNums, 9);
@@ -24,8 +21,9 @@ namespace LeetCodeTest
             //     }
             // };
             // var aa = DeleteNodeList_203.RemoveElements (listNode, 9);
-
-            ValidAnagram_242.IsAnagram("anagram", "nagaram");
+            var isPowerOfTwo = PowerofTwo_231.IsPowerOfTwo (10);
+            MajorityElement_169.MajorityElement (new int[] { 1 });
+            ValidAnagram_242.IsAnagram ("anagram", "nagaram");
 
             var nums = new int[] { };
 
@@ -34,14 +32,14 @@ namespace LeetCodeTest
             // var addDigis = AddDigi258.AddDigits(38);
 
             var a = "THIS";
-            Console.WriteLine(a.Length);
-            Console.WriteLine(ArrayObj.ToLowerCaseString(a));
+            Console.WriteLine (a.Length);
+            Console.WriteLine (ArrayObj.ToLowerCaseString (a));
 
             var s = "This is a test.";
             var t = ", and this is as well.";
-            Console.WriteLine(String.Join(s, t.ToCharArray()));
+            Console.WriteLine (String.Join (s, t.ToCharArray ()));
 
-            Console.ReadLine();
+            Console.ReadLine ();
         }
     }
 }
