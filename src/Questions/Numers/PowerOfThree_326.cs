@@ -8,9 +8,7 @@ namespace src.Questions.Numers
             {
                 return false;
             }
-
-            var s = 0;
-
+            
             while (n % 3 == 0)
             {
                 n = n / 3;
