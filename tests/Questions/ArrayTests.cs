@@ -4,7 +4,7 @@ namespace tests.Questions {
 
     public class ArrayTests {
         [Test]
-        public void PowerOfThree_326Test () {
+        public void DuplicateZerosTest () {
 
             var target = new int[] { 1, 0, 2, 3, 0, 4, 5, 0 };
             // var target = new int[] { 8,4,5,0,0,0,0,7 };
@@ -14,6 +14,18 @@ namespace tests.Questions {
             ArrayTest.DuplicateZeros (target);
 
             Assert.AreEqual (target, expected);
+        }
+
+        [Test]
+        public void NumberofGoodPairsTest () {
+
+            var target = new int[] { 1, 2, 3, 1, 1, 3 };
+
+            var expected = 4;
+
+            var actual = ArrayTest.NumberofGoodPairs (target);
+
+            Assert.AreEqual (actual, expected);
         }
     }
 }

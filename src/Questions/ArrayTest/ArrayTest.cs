@@ -19,10 +19,26 @@ namespace src.Questions.ArrayTest {
                 if (arr[idx] == 0) {
                     arr[idx] = arr[idx + 1];
                     newIdx += 2;
-                } else {                    
+                } else {
                     newIdx++;
                 }
             }
+        }
+
+        public static int NumberofGoodPairs (int[] nums) {
+            var result = 0;
+
+            if (nums.Length < 1) return result;
+
+            for (int i = 0; i < nums.Length; i++) {
+                for (int j = nums.Length - 1; j > i; j--) {
+                    if (nums[i] == nums[j]) {
+                        result++;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }
