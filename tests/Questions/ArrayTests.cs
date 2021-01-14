@@ -27,5 +27,23 @@ namespace tests.Questions {
 
             Assert.AreEqual (actual, expected);
         }
+
+        // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+        // Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+        // nums = null or num length <> 2n -> null.
+
+        [Test]
+        public void ShuffleTheArray_1470_Test () {
+
+            var target = new int[] { 2, 5, 1, 3, 4, 7 };
+
+            var n = 3;
+
+            var expected = new int[] { 2, 3, 5, 4, 1, 7 };
+
+            var actual = ArrayTest.ShuffletheArray (target, n);
+
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
