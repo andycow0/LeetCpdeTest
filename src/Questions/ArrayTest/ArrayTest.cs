@@ -116,9 +116,24 @@ namespace src.Questions.ArrayTest {
             return result;
         }
 
-        public static int[] RunningSum(int[] nums)
-        {
-            throw new System.NotImplementedException();
+        public static int[] RunningSum (int[] nums) {
+
+            var result = new List<int> ();
+
+            for (var i = 0; i < nums.Length; i++) {
+                if (i == 0) {
+                    result.Add (nums[i]);
+                } else {
+                    var sum = 0;
+                    for (var j = i; j > -1; j--) {
+                        sum += nums[j];
+                    }
+                    result.Add (sum);
+                }
+
+            }
+
+            return result.ToArray ();
         }
     }
 }
