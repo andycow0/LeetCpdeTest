@@ -62,7 +62,7 @@ namespace tests.Questions {
         [Test]
         public void GoalParserInterpretation_Test () {
 
-             var target = "G()(al)";
+            var target = "G()(al)";
             // var target = "G()()()()(al)";
             //var target = "G()()()(al)()";
             var expected = "Goal";
@@ -70,6 +70,20 @@ namespace tests.Questions {
             // var expected = "Goooalo";
 
             string actual = ArrayTest.Interpret (target);
+
+            Assert.AreEqual (actual, expected);
+        }
+
+        // You own a Goal Parser that can interpret a string command. The command consists of an alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the string "G", "()" as the string "o", and "(al)" as the string "al". The interpreted strings are then concatenated in the original order.
+        //Given the string command, return the Goal Parser's interpretation of command.
+        [Test]
+        public void NumJewelsInStones_Test () {
+
+            var jewels = "aA";
+            var stones = "aAAbbbb";
+            var expected = 3;
+
+            int actual = ArrayTest.NumJewelsInStones (jewels, stones);
 
             Assert.AreEqual (actual, expected);
         }

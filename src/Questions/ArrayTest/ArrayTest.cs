@@ -83,24 +83,37 @@ namespace src.Questions.ArrayTest {
         public static string Interpret (string command) {
 
             var result = new List<string> ();
-            
+
             var idx = 0;
-            
+
             while (idx < command.Length) {
                 if (command[idx] == 'G') {
                     idx++;
-                    result.Add("G");
-                } else if (command[idx] == '(' && command[idx+1] == ')') {
+                    result.Add ("G");
+                } else if (command[idx] == '(' && command[idx + 1] == ')') {
                     idx += 2;
-                    result.Add("o");
+                    result.Add ("o");
                 } else {
                     idx += 4;
-                    result.Add("al");
+                    result.Add ("al");
                 }
-                
+
             }
 
             return string.Join (string.Empty, result);
+        }
+
+        public static int NumJewelsInStones (string jewels, string stones) {
+
+            var result = 0;
+
+            foreach (var stone in stones) {
+                if (jewels.Contains (stone)) {
+                    result++;
+                }
+            }
+
+            return result;
         }
     }
 }
