@@ -115,5 +115,10 @@ namespace src.Questions.ArrayTest {
 
             return result;
         }
+
+        public static int[] RunningSum(int[] nums)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
