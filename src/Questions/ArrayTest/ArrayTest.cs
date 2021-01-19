@@ -135,5 +135,17 @@ namespace src.Questions.ArrayTest {
 
             return result.ToArray ();
         }
+
+        public static string ShuffleString (string s, int[] indices) {
+
+            var result = new string[s.Length];
+
+            for (var i = 0; i < s.Length; i++) {
+                var idx = indices[i];
+                result[idx] = s[i].ToString ();
+            }
+
+            return string.Join ("", result);
+        }
     }
 }

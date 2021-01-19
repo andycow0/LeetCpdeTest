@@ -101,5 +101,21 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 1528. Shuffle String
+        // Given a string s and an integer array indices of the same length.
+        // The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+        // Return the shuffled string.
+        [Test]
+        public void ShuffleString_Test () {
+            // arrange
+            var s = "codeleet";
+            var indices = new int[] { 4, 5, 6, 7, 0, 2, 1, 3 };
+            var expected = "leetcode";
+            // actual
+            var actual = ArrayTest.ShuffleString(s, indices);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
