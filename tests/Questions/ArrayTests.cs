@@ -133,5 +133,19 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
+        // 136. Single Number
+        // https://leetcode.com/problems/single-number/
+        // Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+        // Follow up: Could you implement a solution with a linear runtime complexity and without using extra memory?
+        [Test]
+        public void SingleNumber_Test () {
+            // arrange
+            var nums = new int[] { 2, 2, 1 };
+            var expected = 1;
+            // actual
+            int actual = ArrayTest.SingleNumber (nums);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
