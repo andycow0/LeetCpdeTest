@@ -113,9 +113,25 @@ namespace tests.Questions {
             var indices = new int[] { 4, 5, 6, 7, 0, 2, 1, 3 };
             var expected = "leetcode";
             // actual
-            var actual = ArrayTest.ShuffleString(s, indices);
+            var actual = ArrayTest.ShuffleString (s, indices);
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 344. Reverse String
+        // Write a function that reverses a string. The input string is given as an array of characters char[].
+        // Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+        // You may assume all the characters consist of printable ascii characters.
+        [Test]
+        public void ReverseString_Test () {
+            // arrange
+            var s = new char[] { 'h', 'e', 'l', 'l', 'o' };
+            var expected = new char[] { 'o', 'l', 'l', 'e', 'h' };
+            // actual
+            var actual = ArrayTest.ReverseString (s);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
     }
 }

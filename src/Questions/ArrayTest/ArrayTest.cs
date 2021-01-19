@@ -147,5 +147,20 @@ namespace src.Questions.ArrayTest {
 
             return string.Join ("", result);
         }
+
+        public static char[] ReverseString (char[] s) {
+
+            for (var i = 0; i < s.Length; i++) {
+                var j = s.Length - 1 - i;
+                if (j == i || i > j) {
+                    break;
+                }
+                var temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+
+            return s;
+        }
     }
 }
