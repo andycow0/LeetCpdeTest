@@ -140,7 +140,7 @@ namespace tests.Questions {
         [Test]
         public void SingleNumber_Test () {
             // arrange
-            var nums = new int[] { 2, 2, 1 };
+            var nums = new int[] { 1,1,2,3,4,5,4,5,3,-1,2 };
             var expected = 1;
             // actual
             int actual = ArrayTest.SingleNumber (nums);

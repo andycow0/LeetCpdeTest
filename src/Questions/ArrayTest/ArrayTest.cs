@@ -162,5 +162,20 @@ namespace src.Questions.ArrayTest {
 
             return s;
         }
+
+        public static int SingleNumber (int[] nums) {
+            var numList = new List<int> ();
+
+            for (int i = 0; i < nums.Length; i++) {
+                var idx = numList.IndexOf (nums[i]);
+                if (idx > -1) {
+                    numList.Remove (nums[i]);
+                } else {
+                    numList.Add (nums[i]);
+                }
+            }
+
+            return numList[0];
+        }
     }
 }
