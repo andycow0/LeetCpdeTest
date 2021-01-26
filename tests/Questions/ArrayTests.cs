@@ -140,10 +140,26 @@ namespace tests.Questions {
         [Test]
         public void SingleNumber_Test () {
             // arrange
-            var nums = new int[] { 1,1,2,3,4,5,4,5,3,-1,2 };
+            var nums = new int[] { 1, 1, 2, 3, 4, 5, 4, 5, 3, -1, 2 };
             var expected = 1;
             // actual
             int actual = ArrayTest.SingleNumber (nums);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+        // 217. Contains Duplicate
+        // https://leetcode.com/problems/contains-duplicate/
+        // Given an array of integers, find if the array contains any duplicates.
+        //Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+        [Test]
+        public void ContainsDuplicate_Test () {
+            // arrange
+            var nums = new int[] { 1,2,3,1};
+            var expected = true;
+            // var nums = new int[] { 1,2,3,4};
+            // var expected = false;
+            // actual
+            bool actual = ArrayTest.ContainsDuplicate(nums);
             // assert
             Assert.AreEqual (actual, expected);
         }

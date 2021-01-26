@@ -177,5 +177,18 @@ namespace src.Questions.ArrayTest {
 
             return numList[0];
         }
+
+        public static bool ContainsDuplicate (int[] nums) {
+
+            var duplicateDic = new List<int> ();
+
+            for (var i = 0; i < nums.Length; i++) {
+                if (!duplicateDic.Any (d => d == nums[i])) {
+                    duplicateDic.Add (nums[i]);
+                }
+            }
+
+            return duplicateDic.Count != nums.Length;
+        }
     }
 }
