@@ -183,16 +183,31 @@ namespace tests.Questions
         // Given an array of integers, find if the array contains any duplicates.
         //Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
         [Test]
-        public void ContainsDuplicate_Test () {
+        public void ContainsDuplicate_Test()
+        {
             // arrange
-            var nums = new int[] { 1,2,3,1};
+            var nums = new int[] { 1, 2, 3, 1 };
             var expected = true;
             // var nums = new int[] { 1,2,3,4};
             // var expected = false;
             // actual
             bool actual = ArrayTest.ContainsDuplicate(nums);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual(actual, expected);
+        }
+        // 26. Remove Duplicates from Sorted Array
+        // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+        [Test]
+        public void RemoveDuplicatesTest()
+        {
+            // arrange
+            var nums = new int[] { 1, 1, 2 };
+            var expected = 2;
+
+            // actual
+            int actual = ArrayTest.RemoveDuplicates(nums);
+            // assert
+            Assert.AreEqual(actual, expected);
         }
     }
 }

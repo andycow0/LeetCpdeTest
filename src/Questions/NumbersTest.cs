@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeetCodeTest.Questions
@@ -31,6 +32,26 @@ namespace LeetCodeTest.Questions
             }
 
             return result;
+        }
+
+        public static int TrailingZeroes(int n)
+        {
+            if (n < 1)
+            {
+                return 0;
+            }
+
+            var factorial = 1;
+
+            while (n > 0)
+            {
+                factorial = factorial * n;
+                n--;
+            }
+
+            var result = factorial.ToString();
+
+            return result.Where(s => s == '0').Any() ? 1 : 0;
         }
     }
 }
