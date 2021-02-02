@@ -244,24 +244,51 @@ namespace src.Questions.ArrayTest
                 }
                 else
                 {
-                    maxProfit = Math.Max( prices[i] - minPrice, maxProfit);
+                    maxProfit = Math.Max(prices[i] - minPrice, maxProfit);
                 }
             }
 
             return maxProfit;
         }
 
-        public static bool ContainsDuplicate (int[] nums) {
+        public static bool ContainsDuplicate(int[] nums)
+        {
+            var duplicateDic = new List<int>();
 
-            var duplicateDic = new List<int> ();
-
-            for (var i = 0; i < nums.Length; i++) {
-                if (!duplicateDic.Any (d => d == nums[i])) {
-                    duplicateDic.Add (nums[i]);
+            for (var i = 0; i < nums.Length; i++)
+            {
+                if (!duplicateDic.Any(d => d == nums[i]))
+                {
+                    duplicateDic.Add(nums[i]);
                 }
             }
 
             return duplicateDic.Count != nums.Length;
+        }
+
+        public static int RemoveDuplicates(int[] nums)
+        {
+            if (nums.Length < 1)
+            {
+                return 0;
+            }
+
+            var count = 1;
+            var nowIdx = 1;
+            var now = nums[0];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (now != nums[i])
+                {
+                    count++;
+                    now = nums[i];
+                    nums[nowIdx] = nums[i];
+                    nowIdx++;
+                }
+            }
+
+            return count;
         }
     }
 }
