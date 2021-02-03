@@ -224,5 +224,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 442. Find All Duplicates in an Array
+        // https://leetcode.com/problems/find-all-duplicates-in-an-array/
+        [Test]
+        public void FindDuplicatesTest () {
+            // arrange
+            var nums = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
+            var expected = new int[] { 2, 3 };
+
+            // actual
+            var actual = ArrayTest.FindDuplicates (nums);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
