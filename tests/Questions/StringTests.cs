@@ -37,5 +37,20 @@ namespace tests.Questions
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 13. Roman to Integer
+        // https://leetcode.com/problems/roman-to-integer/
+        [Test, Category("StringTest")]
+        public void RomanToIntTest () {
+            // arrange
+            // var s = "leetcode";
+            // var expected = 0;
+            var s = "III";
+            var expected = 3;
+            // actual
+            var actual = StringTest.RomanToInt (s);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

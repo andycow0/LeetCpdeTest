@@ -66,5 +66,25 @@ namespace src.Questions.StringTest {
             return -1;
         }
 
+        public static int RomanToInt (string s) {
+
+            var dic = new Dictionary<char, int> () { { 'I', 1 }, { 'X', 10 }, { 'C', 100 } };
+            var spDic = new Dictionary<char, int> () { { 'V', 5 }, { 'L', 50 }, { 'D', 500 }, { 'M', 1000 } };
+
+            if (s.Length < 1) {
+                return 0;
+            }
+            var sum = 0;
+            var i = 0;
+            while (i < s.Length) {
+                if (dic.TryGetValue (s[i], out int value) && spDic.TryGetValue (s[i + 1], out int spValue)) {
+                    sum += spValue - value;
+                    i += 2;
+                } else {
+                    sum += value;
+                }
+            }
+            return sum;
+        }
     }
 }
