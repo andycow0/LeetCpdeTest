@@ -45,8 +45,8 @@ namespace tests.Questions
             // arrange
             // var s = "leetcode";
             // var expected = 0;
-            var s = "III";
-            var expected = 3;
+            var s = "MCMXCIV";
+            var expected = 4;
             // actual
             var actual = StringTest.RomanToInt (s);
             // assert
