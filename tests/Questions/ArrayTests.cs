@@ -238,5 +238,20 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 88. Merge Sorted Array
+        // https://leetcode.com/problems/merge-sorted-array/
+        [Test]
+        public void MergeTest () {
+            // arrange
+            var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+            var nums2 = new int[] { 2, 5, 6 };
+            var expected = new int[] { 2, 3 };
+
+            // actual
+            var actual = ArrayTest.Merge (nums1, 3, nums2, 3);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

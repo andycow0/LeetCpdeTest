@@ -256,13 +256,25 @@ namespace src.Questions.ArrayTest {
 
             for (var i = 0; i < nums.Length; i++) {
                 if (status[nums[i] - 1]) {
-                    result.Add(nums[i]);
+                    result.Add (nums[i]);
                 } else {
                     status[nums[i] - 1] = true;
                 }
             }
 
             return result;
+        }
+
+        public static void Merge (int[] nums1, int m, int[] nums2, int n) {
+
+            for (var i = n - 1; i == 0; i--) {
+                m--;
+                if (nums1[m] < nums2[i]) {
+                    nums1[m + n + 1] = nums2[i];
+                } else {
+
+                }
+            }
         }
     }
 }
