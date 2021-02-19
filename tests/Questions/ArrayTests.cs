@@ -244,14 +244,17 @@ namespace tests.Questions {
         [Test]
         public void MergeTest () {
             // arrange
-            var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
-            var nums2 = new int[] { 2, 5, 6 };
-            var expected = new int[] { 2, 3 };
+            // var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+            // var nums2 = new int[] { 2, 5, 6 };
+            var nums1 = new int[] { 0 };
+            var nums2 = new int[] { 1};
+            var expected = new int[] { 1, 2, 2, 3, 5, 6 };
 
             // actual
-            var actual = ArrayTest.Merge (nums1, 3, nums2, 3);
+            //ArrayTest.Merge (nums1, 3, nums2, 3);
+            ArrayTest.Merge (nums1, 0, nums2, 1);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual (nums1, expected);
         }
     }
 }

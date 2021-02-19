@@ -266,13 +266,15 @@ namespace src.Questions.ArrayTest {
         }
 
         public static void Merge (int[] nums1, int m, int[] nums2, int n) {
-
-            for (var i = n - 1; i == 0; i--) {
-                m--;
-                if (nums1[m] < nums2[i]) {
-                    nums1[m + n + 1] = nums2[i];
+            n--;
+            m--;
+            while (n >= 0) {
+                if (nums1[m] < nums2[n]) {
+                    nums1[m + n + 1] = nums2[n];
+                    n--;
                 } else {
-
+                    nums1[m + n + 1] = nums1[m];
+                    m--;
                 }
             }
         }
