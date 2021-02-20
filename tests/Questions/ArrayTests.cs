@@ -256,5 +256,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (nums1, expected);
         }
+
+        // 268. Missing Number
+        // https://leetcode.com/problems/missing-number/
+        [Test, Category("StringTest")]
+        public void MissingNumberTest()
+        {
+            // arrange
+            var nums = new int[] { 3, 0, 1 };
+            var expected = 2;
+            // actual
+            int actual = ArrayTest.MissingNumber(nums);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
