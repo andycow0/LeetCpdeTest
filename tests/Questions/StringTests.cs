@@ -52,5 +52,19 @@ namespace tests.Questions
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 125. Valid Palindrome
+        // https://leetcode.com/problems/valid-palindrome/
+        [Test, Category("StringTest")]
+        public void IsPalindromeTest()
+        {
+            // arrange
+            var s = "0P";
+            var expected = true;
+            // actual
+            bool actual = StringTest.IsPalindrome(s);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }

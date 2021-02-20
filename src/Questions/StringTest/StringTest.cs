@@ -123,5 +123,38 @@ namespace src.Questions.StringTest
 
             return sum;
         }
+
+        public static bool IsPalindrome(string s)
+        {
+            s = s.ToLower();
+
+            var target = string.Empty;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 48 && s[i] <= 57))
+                {
+                    target += s[i];
+                }
+            }
+
+            var j = target.Length - 1;
+
+            for (int i = 0; i < target.Length; i++)
+            {
+                if (i >= j)
+                {
+                    break;
+                }
+                if (target[i] != target[j])
+                {
+                    return false;
+                }
+                j--;
+            }
+
+
+            return true;
+        }
     }
 }
