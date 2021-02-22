@@ -124,6 +124,32 @@ namespace src.Questions.StringTest
             return sum;
         }
 
+        public static int StrStr(string haystack, string needle)
+        {
+            if (haystack == needle)
+            {
+                return 0;
+            }
+            var i = 0;
+
+            while (i < haystack.Length)
+            {
+                if (i + needle.Length - 1 > haystack.Length - 1)
+                {
+                    return -1;
+                }
+                var now = haystack.Substring(i, needle.Length);
+
+                if (now == needle)
+                {
+                    return i;
+                }
+                i++;
+            }
+
+            return -1;
+        }
+
         public static bool IsPalindrome(string s)
         {
             s = s.ToLower();

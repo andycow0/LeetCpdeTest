@@ -12,45 +12,48 @@ namespace tests.Questions
         // Open brackets must be closed by the same type of brackets.
         // Open brackets must be closed in the correct order.
         [Test, Category("StringTest")]
-        public void ValidParenthesesTest () {
+        public void ValidParenthesesTest()
+        {
             // arrange
             var s = "{]}";
             var expected = false;
             // actual
-            var actual = StringTest.IsValid (s);
+            var actual = StringTest.IsValid(s);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual(actual, expected);
         }
 
         // 387. First Unique Character in a String
         // https://leetcode.com/problems/first-unique-character-in-a-string/
         // Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
         [Test, Category("StringTest")]
-        public void FirstUniqCharTest () {
+        public void FirstUniqCharTest()
+        {
             // arrange
             // var s = "leetcode";
             // var expected = 0;
             var s = "loveleetcode";
             var expected = 2;
             // actual
-            var actual = StringTest.FirstUniqChar (s);
+            var actual = StringTest.FirstUniqChar(s);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual(actual, expected);
         }
 
         // 13. Roman to Integer
         // https://leetcode.com/problems/roman-to-integer/
         [Test, Category("StringTest")]
-        public void RomanToIntTest () {
+        public void RomanToIntTest()
+        {
             // arrange
             // var s = "leetcode";
             // var expected = 0;
             var s = "MCMXCIV";
             var expected = 4;
             // actual
-            var actual = StringTest.RomanToInt (s);
+            var actual = StringTest.RomanToInt(s);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual(actual, expected);
         }
 
         // 125. Valid Palindrome
@@ -67,5 +70,19 @@ namespace tests.Questions
             Assert.AreEqual(actual, expected);
         }
 
+        // 28. Implement strStr()
+        // https://leetcode.com/problems/implement-strstr/
+        [Test, Category("StringTest")]
+        public void StrStrTest()
+        {
+            // arrange
+            var haystack = "abc";
+            var needle = "c";
+            var expected = 2;
+            // actual
+            int actual = StringTest.StrStr(haystack, needle);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
