@@ -6,6 +6,18 @@ namespace tests.Questions
 {
     public class NumbersTests
     {
+        [Test, Category("NumbersTest")]
+        public void ReverseTest()
+        {
+            // arrange
+            var n = 17;
+            var expected = false;
+            // actual
+            var actual = NumbersTest.IsPrimeNumber(n);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
+
         [Test]
         public void PowerOfThree_326Test()
         {
@@ -61,16 +73,16 @@ namespace tests.Questions
         // 7. Reverse Integer
         // https://leetcode.com/problems/reverse-integer/
         // Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-        [Test, Category("NumbersTest")]
-        public void ReverseTest()
-        {
-            // arrange
-            var n = -2147483648;
-            var expected = 321;
-            // actual
-            var actual = NumbersTest.Reverse(n);
-            // assert
-            Assert.AreEqual(actual, expected);
-        }
+        //[Test, Category("NumbersTest")]
+        //public void ReverseTest()
+        //{
+        //    // arrange
+        //    var n = -2147483648;
+        //    var expected = 321;
+        //    // actual
+        //    var actual = NumbersTest.Reverse(n);
+        //    // assert
+        //    Assert.AreEqual(actual, expected);
+        //}
     }
 }
