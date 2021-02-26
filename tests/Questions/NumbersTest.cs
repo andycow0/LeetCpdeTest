@@ -7,13 +7,28 @@ namespace tests.Questions
     public class NumbersTests
     {
         [Test, Category("NumbersTest")]
-        public void ReverseTest()
+        public void IsPrimeNumberTest()
         {
             // arrange
-            var n = 17;
-            var expected = false;
+            var n = 2;
+            var expected = true;
             // actual
             var actual = NumbersTest.IsPrimeNumber(n);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
+
+        // 204. Count Primes
+        // https://leetcode.com/problems/count-primes/
+        // sln: https://leetcode.com/problems/count-primes/discuss/721863/Java-easy-to-understand-with-explanation
+        [Test, Category("NumbersTest")]
+        public void CountPrimesTest()
+        {
+            // arrange
+            var n = 10;
+            var expected = 4;
+            // actual
+            var actual = NumbersTest.CountPrimes(n);
             // assert
             Assert.AreEqual(actual, expected);
         }
