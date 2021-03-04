@@ -2,30 +2,40 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeetCodeTest.Questions.LinkedListTest {
-    public class ListTest {
-        public static ListNode GetIntersectionNode (ListNode headA, ListNode headB) {
+namespace LeetCodeTest.Questions.LinkedListTest
+{
+    public class ListTest
+    {
+        public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+        {
 
-            var lengthA = GetLength (headA);
-            var lengthB = GetLength (headB);
+            var lengthA = GetLength(headA);
+            var lengthB = GetLength(headB);
             ListNode result = null;
             var diff = lengthA - lengthB;
-            var skip = Math.Abs (diff);
+            var skip = Math.Abs(diff);
 
-            if (diff < 0) {
-                while (skip > 0) {
+            if (diff < 0)
+            {
+                while (skip > 0)
+                {
                     headB = headB.next;
                     skip--;
                 }
-            } else {
-                while (skip > 0) {
+            }
+            else
+            {
+                while (skip > 0)
+                {
                     headA = headA.next;
                     skip--;
                 }
             }
 
-            while (headA != null) {
-                if (headA.val == headB.val) {
+            while (headA != null)
+            {
+                if (headA.val == headB.val)
+                {
                     result = headA;
                     break;
                 }
@@ -36,56 +46,49 @@ namespace LeetCodeTest.Questions.LinkedListTest {
             return result;
         }
 
-        private static int GetLength (ListNode listNode) {
+        private static int GetLength(ListNode listNode)
+        {
             var result = 0;
-            while (listNode != null) {
+            while (listNode != null)
+            {
                 result++;
                 listNode = listNode.next;
             }
             return result;
         }
 
-        private static int[] GetNewArray (ListNode listNode) {
-            var result = new List<int> ();
-            while (listNode != null) {
-                result.Add (listNode.val);
+        private static int[] GetNewArray(ListNode listNode)
+        {
+            var result = new List<int>();
+            while (listNode != null)
+            {
+                result.Add(listNode.val);
                 listNode = listNode.next;
             }
-            return result.ToArray ();
+            return result.ToArray();
         }
 
-        public static ListNode MergeTwoLists (ListNode l1, ListNode l2) {
+        public static ListNode MergeTwoLists(ListNode l1, ListNode l2)
+        {
+            var result = new ListNode();
+            var current = result;
 
-            if (l1 == null || l2 == null) {
-                return null;
-            }
-
-            ListNode result = null;
-
-            while (l1 != null) {
-
-                while (l2 != null) {
-                    if (l1.val > l2.val) {
-                        if (result is null) {
-                            result = new ListNode (l2.val);
-                        } else {
-                            result.next = l2;
-                        }
-                        break;
-                    } else {
-                        if (result is null) {
-                            result = new ListNode (l1.val);
-                        } else {
-                            result.next = l1;
-                        }
-                    }
+            while (l1 != null || l2 != null)
+            {
+                if (l1 == null || (l2 != null && l1.val > l2.val))
+                {
+                    current.next = l2;
                     l2 = l2.next;
                 }
-                
-                l1 = l1.next;
+                else
+                {
+                    current.next = l1;
+                    l1 = l1.next;
+                }
+                current = current.next;
             }
 
-            return result;
+            return result.next;
         }
     }
 }
