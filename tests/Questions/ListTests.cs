@@ -76,5 +76,22 @@ namespace tests.Questions {
             //Assert.AreEqual(actual, expected);
         }
 
+        // 234. Palindrome Linked List
+        // https://leetcode.com/problems/palindrome-linked-list/
+        [Test, Category ("ListTest")]
+        public void IsPalindromeTest () {
+
+            var head = new ListNode (1);
+            head.next = new ListNode(2);
+            head.next.next = new ListNode(3);
+            head.next.next.next = new ListNode(2);
+            // head.next.next.next.next = new ListNode(1);
+
+            // actual
+            var actual = ListTest.IsPalindrome (head);
+            // assert
+            //Assert.AreEqual(actual, expected);
+        }
+
     }
 }

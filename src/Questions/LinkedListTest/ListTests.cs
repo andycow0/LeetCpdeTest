@@ -67,5 +67,26 @@ namespace LeetCodeTest.Questions.LinkedListTest {
 
             return result;
         }
+
+        public static bool IsPalindrome (ListNode head) {
+
+            var list = new List<int> ();
+
+            while (head != null) {
+                list.Add (head.val);
+                head = head.next;
+            }
+
+            var idx = 0;
+            var count = list.Count;
+            while (idx < (count / 2 + 1)) {
+                if (list[idx] != list[count - idx - 1]) {
+                    return false;
+                }
+                idx++;
+            }
+
+            return true;
+        }
     }
 }
