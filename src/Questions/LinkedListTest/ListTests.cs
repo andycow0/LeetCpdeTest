@@ -9,8 +9,8 @@ namespace LeetCodeTest.Questions.LinkedListTest {
             while (headA != null) {
                 ListNode pB = headB;
                 while (pB != null) {
-                    if (headA.val == pB.val) 
-                    return headA;
+                    if (headA.val == pB.val)
+                        return headA;
                     pB = pB.next;
                 }
                 headA = headA.next;
@@ -52,6 +52,20 @@ namespace LeetCodeTest.Questions.LinkedListTest {
             }
 
             return result.next;
+        }
+
+        public static ListNode ReverseList (ListNode head) {
+
+            ListNode result = null;
+            while (head != null) {
+                var last = result;
+                result = new ListNode (head.val);
+                result.next = last;
+
+                head = head.next;
+            }
+
+            return result;
         }
     }
 }

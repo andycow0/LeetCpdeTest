@@ -60,5 +60,21 @@ namespace tests.Questions {
             //Assert.AreEqual(actual, expected);
         }
 
+        // 206. Reverse Linked List
+        // https://leetcode.com/problems/reverse-linked-list/
+        [Test, Category ("ListTest")]
+        public void ReverseListTest () {
+
+            var head = new ListNode (1);
+            head.next = new ListNode(2);
+            head.next.next = new ListNode(3);
+            head.next.next.next = new ListNode(4);
+
+            // actual
+            var actual = ListTest.ReverseList (head);
+            // assert
+            //Assert.AreEqual(actual, expected);
+        }
+
     }
 }
