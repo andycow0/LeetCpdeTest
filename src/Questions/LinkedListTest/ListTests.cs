@@ -88,5 +88,47 @@ namespace LeetCodeTest.Questions.LinkedListTest {
 
             return true;
         }
+
+        public static ListNode AddTwoNumbers (ListNode l1, ListNode l2) {
+
+            // var list1 = new List<int> ();
+            // var list2 = new List<int> ();
+            var sum1 = 0;
+            var sum2 = 0;
+            var count = 1;
+            while (l1 != null || l2 != null) {
+
+                if (l1 != null) {
+                    sum1 = sum1 * 10 + l1.val;
+                }
+
+                if (l2 != null) {
+                    sum2 = sum2 * 10 + l2.val;
+                }
+                l1 = l1 is null ? null : l1.next;
+                l2 = l2 is null ? null : l2.next;
+
+                if ((l1 is null) && (l2 is null)) {
+                    break;
+                }
+
+                count++;
+            }
+
+            var result = new ListNode (0);
+            var current = result;
+            var sum = sum1 + sum2;
+            if (sum == 0) {
+                return result;
+            }
+            while (sum > 0) {
+                current.next = new ListNode (sum % 10);
+                sum = sum / 10;
+                count--;
+                current = current.next;
+            }
+
+            return result.next;
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace tests.Questions {
         // https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/
         [Test, Category ("ListTest")]
         public void GetIntersectionNodeTest () {
-            
+
             var headA = new ListNode (4);
             headA.next = new ListNode (1);
             headA.next.next = new ListNode (8);
@@ -66,9 +66,9 @@ namespace tests.Questions {
         public void ReverseListTest () {
 
             var head = new ListNode (1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
+            head.next = new ListNode (2);
+            head.next.next = new ListNode (3);
+            head.next.next.next = new ListNode (4);
 
             // actual
             var actual = ListTest.ReverseList (head);
@@ -82,13 +82,48 @@ namespace tests.Questions {
         public void IsPalindromeTest () {
 
             var head = new ListNode (1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(2);
+            head.next = new ListNode (2);
+            head.next.next = new ListNode (3);
+            head.next.next.next = new ListNode (2);
             // head.next.next.next.next = new ListNode(1);
 
             // actual
             var actual = ListTest.IsPalindrome (head);
+            // assert
+            //Assert.AreEqual(actual, expected);
+        }
+
+        // 2. Add Two Numbers
+        // https://leetcode.com/problems/add-two-numbers/submissions/
+        [Test, Category ("ListTest")]
+        public void AddTwoNumbersTest () {
+
+            // var l1 = new ListNode (2);
+            // l1.next = new ListNode (4);
+            // l1.next.next = new ListNode (3);
+
+            // var l2 = new ListNode (5);
+            // l2.next = new ListNode (6);
+            // l2.next.next = new ListNode (4);
+
+            // var l1 = new ListNode (9);
+            // l1.next = new ListNode (9);
+            // l1.next.next = new ListNode (9);
+            // l1.next.next.next = new ListNode (9);
+            // l1.next.next.next.next = new ListNode (9);
+            // l1.next.next.next.next.next = new ListNode (9);
+            // l1.next.next.next.next.next.next = new ListNode (9);
+
+            // var l2 = new ListNode (9);
+            // l2.next = new ListNode (9);
+            // l2.next.next = new ListNode (9);
+            // l2.next.next.next = new ListNode (9);
+
+            var l1 = new ListNode (0);
+            var l2 = new ListNode (0);
+
+            // actual
+            var actual = ListTest.AddTwoNumbers (l1, l2);
             // assert
             //Assert.AreEqual(actual, expected);
         }
