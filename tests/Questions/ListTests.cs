@@ -106,21 +106,21 @@ namespace tests.Questions {
             // l2.next = new ListNode (6);
             // l2.next.next = new ListNode (4);
 
-            // var l1 = new ListNode (9);
-            // l1.next = new ListNode (9);
-            // l1.next.next = new ListNode (9);
-            // l1.next.next.next = new ListNode (9);
-            // l1.next.next.next.next = new ListNode (9);
-            // l1.next.next.next.next.next = new ListNode (9);
-            // l1.next.next.next.next.next.next = new ListNode (9);
+            var l1 = new ListNode (9);
+            l1.next = new ListNode (9);
+            l1.next.next = new ListNode (9);
+            l1.next.next.next = new ListNode (9);
+            l1.next.next.next.next = new ListNode (9);
+            l1.next.next.next.next.next = new ListNode (9);
+            l1.next.next.next.next.next.next = new ListNode (9);
 
-            // var l2 = new ListNode (9);
-            // l2.next = new ListNode (9);
-            // l2.next.next = new ListNode (9);
-            // l2.next.next.next = new ListNode (9);
+            var l2 = new ListNode (9);
+            l2.next = new ListNode (9);
+            l2.next.next = new ListNode (9);
+            l2.next.next.next = new ListNode (9);
 
-            var l1 = new ListNode (0);
-            var l2 = new ListNode (0);
+            // var l1 = new ListNode (0);
+            // var l2 = new ListNode (0);
 
             // actual
             var actual = ListTest.AddTwoNumbers (l1, l2);
