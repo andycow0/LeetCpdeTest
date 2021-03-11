@@ -247,7 +247,7 @@ namespace tests.Questions {
             // var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
             // var nums2 = new int[] { 2, 5, 6 };
             var nums1 = new int[] { 0 };
-            var nums2 = new int[] { 1};
+            var nums2 = new int[] { 1 };
             var expected = new int[] { 1, 2, 2, 3, 5, 6 };
 
             // actual
@@ -259,16 +259,34 @@ namespace tests.Questions {
 
         // 268. Missing Number
         // https://leetcode.com/problems/missing-number/
-        [Test, Category("StringTest")]
-        public void MissingNumberTest()
-        {
+        [Test, Category ("StringTest")]
+        public void MissingNumberTest () {
             // arrange
             var nums = new int[] { 3, 0, 1 };
             var expected = 2;
             // actual
-            int actual = ArrayTest.MissingNumber(nums);
+            int actual = ArrayTest.MissingNumber (nums);
             // assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual (actual, expected);
+        }
+
+        // 989. Add to Array-Form of Integer
+        // https://leetcode.com/problems/add-to-array-form-of-integer/
+        [Test, Category ("BinaryTest")]
+        public void AddToArrayFormTest () {
+
+            // arrange
+            // var A = new int[] { 1, 2, 0, 0 };
+            // var K = 34;
+
+            var A = new int[] { 9,9,9,9 };
+            var K = 1;
+
+            // actual
+            var actual = ArrayTest.AddToArrayForm (A, K);
+
+            // assert
+            // Assert.AreEqual (actual, expected);
         }
     }
 }
