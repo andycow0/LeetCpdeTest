@@ -150,8 +150,40 @@ namespace src.Questions.StringTest
             return -1;
         }
 
+        public static string Multiply(string num1, string num2)
+        {
+            var carry = 0;
+            var list = new Stack<int>();
+
+            for (int i = num1.Length - 1, j = num2.Length - 1
+                ; i > -1 || j > -1
+                ; i--, j--)
+            {
+                var val1 = i < 0 ? 0 : Convert.ToInt16(num1[i].ToString());
+                var val2 = j < 0 ? 0 : Convert.ToInt16(num2[j].ToString());
+                var sum = val1 * val2 + carry;
+
+                list.Push(sum % 10);
+                carry = sum / 10;
+            }
+
+            if (carry > 0)
+            {
+                list.Push(1);
+            }
+
+            var result = string.Empty;
+
+            while (list.Count > 0)
+            {
+                result += list.Pop().ToString();
+            }
+
+            return result;
+        }
+
         public static string AddStrings(string num1, string num2)
-        {           
+        {
             var carry = 0;
             var list = new Stack<int>();
 
@@ -162,7 +194,7 @@ namespace src.Questions.StringTest
                 var val1 = i < 0 ? 0 : Convert.ToInt16(num1[i].ToString());
                 var val2 = j < 0 ? 0 : Convert.ToInt16(num2[j].ToString());
                 var sum = val1 + val2 + carry;
-                                
+
                 list.Push(sum % 10);
                 carry = sum / 10;
             }

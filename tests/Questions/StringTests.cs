@@ -99,5 +99,20 @@ namespace tests.Questions
             // assert
             Assert.AreEqual(actual, expected);
         }
+
+        // 43. Multiply Strings
+        https://leetcode.com/problems/multiply-strings/
+        [Test, Category("StringTest")]
+        public void MultiplyTest()
+        {
+            // arrange
+            var num1 = "123";
+            var num2 = "456";
+            var expected = "56088";
+            // actual
+            string actual = StringTest.Multiply(num1, num2);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
