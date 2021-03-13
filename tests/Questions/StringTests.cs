@@ -84,5 +84,20 @@ namespace tests.Questions
             // assert
             Assert.AreEqual(actual, expected);
         }
+
+        // 415. Add Strings
+        // https://leetcode.com/problems/add-strings/
+        [Test, Category("StringTest")]
+        public void AddStringsTest()
+        {
+            // arrange
+            var num1 = "9";
+            var num2 = "1";
+            var expected = "";
+            // actual
+            string actual = StringTest.AddStrings(num1, num2);
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
