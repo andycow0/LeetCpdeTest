@@ -276,11 +276,11 @@ namespace tests.Questions {
         public void AddToArrayFormTest () {
 
             // arrange
-            // var A = new int[] { 1, 2, 0, 0 };
-            // var K = 34;
+            var A = new int[] { 0 };
+            var K = 23;
 
-            var A = new int[] { 9,9,9,9 };
-            var K = 1;
+            //var A = new int[] { 9,9,9,9 };
+            //var K = 1;
 
             // actual
             var actual = ArrayTest.AddToArrayForm (A, K);
