@@ -101,7 +101,7 @@ namespace tests.Questions
         }
 
         // 43. Multiply Strings
-        https://leetcode.com/problems/multiply-strings/
+        // https://leetcode.com/problems/multiply-strings/
         [Test, Category("StringTest")]
         public void MultiplyTest()
         {

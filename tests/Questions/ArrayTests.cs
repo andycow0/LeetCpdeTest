@@ -259,7 +259,7 @@ namespace tests.Questions {
 
         // 268. Missing Number
         // https://leetcode.com/problems/missing-number/
-        [Test, Category ("StringTest")]
+        [Test, Category ("ArrayTest")]
         public void MissingNumberTest () {
             // arrange
             var nums = new int[] { 3, 0, 1 };
@@ -272,7 +272,7 @@ namespace tests.Questions {
 
         // 989. Add to Array-Form of Integer
         // https://leetcode.com/problems/add-to-array-form-of-integer/
-        [Test, Category ("BinaryTest")]
+        [Test, Category ("ArrayTest")]
         public void AddToArrayFormTest () {
 
             // arrange
@@ -284,6 +284,25 @@ namespace tests.Questions {
 
             // actual
             var actual = ArrayTest.AddToArrayForm (A, K);
+
+            // assert
+            // Assert.AreEqual (actual, expected);
+        }
+
+        // 350. Intersection of Two Arrays II
+        // https://leetcode.com/problems/add-to-array-form-of-integer/
+        [Test, Category ("ArrayTest")]
+        public void IntersectTest () {
+
+            // arrange
+            // var nums1 = new int[] { 4, 9, 5 };
+            // var nums2 = new int[] { 9, 4, 9, 8, 4 };
+            // var nums1 = new int[] { 1, 2, 2, 1 };
+            // var nums2 = new int[] { 2, 2 };
+            var nums1 = new int[] { 1, 2 };
+            var nums2 = new int[] { 1, 1 };
+            // actual
+            var actual = ArrayTest.Intersect (nums1, nums2);
 
             // assert
             // Assert.AreEqual (actual, expected);
