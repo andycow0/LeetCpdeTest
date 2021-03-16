@@ -360,5 +360,15 @@ namespace src.Questions.ArrayTest {
 
             return result.ToArray ();
         }
+
+        public static IList<string> CommonChars (string[] A) {
+            
+            var result = new List<string> ();
+            var baseStr = A[0].ToList();
+
+
+
+            return result;
+        }
     }
 }

@@ -307,5 +307,20 @@ namespace tests.Questions {
             // assert
             // Assert.AreEqual (actual, expected);
         }
+
+        // 1002. Find Common Characters
+        // https://leetcode.com/problems/find-common-characters/
+        [Test, Category ("ArrayTest")]
+        public void CommonCharsTest () {
+
+            // arrange
+            var A = new string[] { "bella", "label", "roller" };
+            
+            // actual
+            var actual = ArrayTest.CommonChars (A);
+
+            // assert
+            // Assert.AreEqual (actual, expected);
+        }
     }
 }
