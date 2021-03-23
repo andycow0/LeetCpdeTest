@@ -359,7 +359,23 @@ namespace tests.Questions
             var actual = ArrayTest.FindDuplicate(nums);
 
             // assert
-             Assert.AreEqual (actual, expected);
+            Assert.AreEqual(actual, expected);
+        }
+
+        // 645. Set Mismatch
+        // https://leetcode.com/problems/set-mismatch/
+        [Test, Category("ArrayTest")]
+        public void FindErrorNumsTest()
+        {
+            // arrange
+            var nums = new int[] { 1, 2, 2, 4 };
+            var expected = new int[] { 2, 3 };
+
+            // actual
+            var actual = ArrayTest.FindErrorNums(nums);
+
+            // assert
+            Assert.AreEqual(actual, expected);
         }
     }
 }

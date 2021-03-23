@@ -486,5 +486,40 @@ namespace src.Questions.ArrayTest
 
             return 0;
         }
+
+        public static int[] FindErrorNums(int[] nums)
+        {
+            var n = nums.Length;
+            var set = new Dictionary<int, int>();
+
+            var result = new int[2];
+
+            for (int i = 1; i <= n; i++)
+            {
+                set.Add(i, 0);
+            }
+
+            var j = 0;
+
+            while (j < n)
+            {
+                if (set.TryGetValue(nums[j], out int times))
+                {
+                    times++;
+
+                    set[nums[j]] = times;
+                }
+                else
+                {
+                    set.Add(nums[j], 0);
+                }
+                j++;
+            }
+
+            result[0] = set.FirstOrDefault(r => r.Value > 1).Key;
+            result[1] = set.FirstOrDefault(r => r.Value == 0).Key;
+
+            return result;
+        }
     }
 }
