@@ -23,6 +23,17 @@ namespace LeetCodeTest.Questions {
             return result;
         }
 
+        public static int FibonacciSequence (int n) {
+            if (n == 0) {
+                return 1;
+            }
+            if (n == 1) {
+                return 1;
+            }
+
+            return FibonacciSequence (n - 1) + FibonacciSequence (n - 2);
+        }
+
         public static bool IsPrimeNumber (int n) {
 
             if (n == 0 || n == 1) {
@@ -110,6 +121,19 @@ namespace LeetCodeTest.Questions {
             }
 
             return x > 0 ? (int) result : (int) result * -1;
+        }
+
+        public static int MySqrt (int x) {
+
+            if (x <= 1) return x;
+
+            var i = 1; // prevent overflow
+            var sq = i * i;
+            while (sq <= x) {
+                i++;
+                sq = i * i;
+            }
+            return (int) i-1;
         }
     }
 }
