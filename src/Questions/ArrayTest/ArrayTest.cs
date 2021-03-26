@@ -1,3 +1,4 @@
+using LeetCodeTest.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -520,6 +521,24 @@ namespace src.Questions.ArrayTest
             result[1] = set.FirstOrDefault(r => r.Value == 0).Key;
 
             return result;
+        }
+
+        public static TreeNode SortedArrayToBST(int[] nums)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static int RemoveElement(int[] nums, int val)
+        {
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == val)
+                {
+                    nums[i] = 0;
+                }
+            }
+
+            return nums.Length;
         }
     }
 }

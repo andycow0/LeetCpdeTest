@@ -377,5 +377,21 @@ namespace tests.Questions
             // assert
             Assert.AreEqual(actual, expected);
         }
+
+        // 27. Remove Element
+        // https://leetcode.com/problems/remove-element/
+        [Test, Category("ArrayTest")]
+        public void RemoveElementTest()
+        {
+            // arrange
+            var nums = new int[] { 3, 2, 2, 3 };
+            var val = 3;
+
+            // actual
+            var actual = ArrayTest.RemoveElement(nums, val);
+
+            // assert
+            //Assert.AreEqual(actual, expected);
+        }
     }
 }
