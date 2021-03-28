@@ -432,5 +432,22 @@ namespace src.Questions.ArrayTest {
 
             return count;
         }
+
+        public static void MoveZeroes (int[] nums) {
+
+            var count = 0;
+
+            for (var i = 0; i < nums.Length; i++) {
+
+                if (nums[i] != 0) {
+                    nums[count++] = nums[i];
+                }
+            }
+
+            for (var j = count; j < nums.Length; j++) {
+                nums[j] = 0;
+            }
+
+        }
     }
 }
