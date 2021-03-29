@@ -449,5 +449,25 @@ namespace src.Questions.ArrayTest {
             }
 
         }
+
+        public static int SearchInsert (int[] nums, int target) {
+
+            var currentIdx = 0;
+
+            for (var i = 0; i < nums.Length; i++) {
+                if (nums[i] == target) {
+                    return i;
+                }
+
+                if (target > nums[i]) {
+                    currentIdx = i + 1;
+                } else {
+                    break;
+                }
+            }
+
+            return currentIdx;
+
+        }
     }
 }

@@ -104,20 +104,19 @@ namespace tests.Questions {
 
         // 69. Sqrt(x)
         // https://leetcode.com/problems/sqrtx/
-        [Test, Category("NumbersTest")]
-        public void MySqrtTest()
-        {
-           // arrange
-           //var n = 2147395599;
-           //var expected = 46339;
-           //var n = 8;
-           //var expected = 2;
-           var n = 4;
-           var expected = 2;
-           // actual
-           var actual = NumbersTest.MySqrt(n);
-           // assert
-           Assert.AreEqual(actual, expected);
+        [Test, Category ("NumbersTest")]
+        public void MySqrtTest () {
+            // arrange
+            //var n = 2147395599;
+            //var expected = 46339;
+            //var n = 8;
+            //var expected = 2;
+            var n = 4;
+            var expected = 2;
+            // actual
+            var actual = NumbersTest.MySqrt (n);
+            // assert
+            Assert.AreEqual (actual, expected);
         }
 
     }

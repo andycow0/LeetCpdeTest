@@ -365,7 +365,7 @@ namespace tests.Questions {
             var actual = ArrayTest.RemoveElement (nums, val);
 
             // assert
-            Assert.AreEqual(actual, 2);
+            Assert.AreEqual (actual, 2);
         }
 
         // 283. Move Zeroes
@@ -373,13 +373,28 @@ namespace tests.Questions {
         [Test, Category ("ArrayTest")]
         public void MoveZeroesTest () {
             // arrange
-            var nums = new int[] { 0,1,0,3,12 };
+            var nums = new int[] { 0, 1, 0, 3, 12 };
 
             // actual
             ArrayTest.MoveZeroes (nums);
 
             // assert
             //Assert.AreEqual(actual, expected);
+        }
+
+        // 35. Search Insert Position
+        // https://leetcode.com/problems/search-insert-position/
+        [Test, Category ("ArrayTest")]
+        public void SearchInsertTest () {
+
+            // arrange
+            var nums = new int[] { 1,3,5,6 };
+            var n = 7;
+            var expected = 4;
+            // actual
+            var actual = ArrayTest.SearchInsert (nums, n);
+            // assert
+            Assert.AreEqual (actual, expected);
         }
     }
 }
