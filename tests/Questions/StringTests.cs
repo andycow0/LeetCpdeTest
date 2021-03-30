@@ -114,5 +114,20 @@ namespace tests.Questions
             // assert
             Assert.AreEqual(actual, expected);
         }
+
+        // 58. Length of Last Word
+        // https://leetcode.com/problems/length-of-last-word/
+        [Test, Category("StringTest")]
+        public void LengthOfLastWordTest()
+        {
+            // arrange
+            var s = " ";
+            var expected = 0;
+            // actual
+            var actual = StringTest.LengthOfLastWord(s);
+
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
     }
 }

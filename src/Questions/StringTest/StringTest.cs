@@ -182,6 +182,36 @@ namespace src.Questions.StringTest
             return result;
         }
 
+        public static int LengthOfLastWord(string s)
+        {
+            s = s.Trim();
+            if (s.Length < 1)
+            {
+                return 0;
+            }
+
+            var list = new List<string>();
+
+            while (!string.IsNullOrEmpty(s))
+            {
+                var spaceIdx = s.IndexOf(' ');
+
+                if (spaceIdx < 0)
+                {
+                    list.Add(s.Substring(0, s.Length));
+                    break;
+                }
+                else
+                {
+                    list.Add(s.Substring(0, spaceIdx));
+                }
+                var nextIdx = spaceIdx + 1;
+                s = s.Substring(nextIdx, s.Length - nextIdx);
+            }
+
+            return list.Last().Length;
+        }
+
         public static string AddStrings(string num1, string num2)
         {
             var carry = 0;
