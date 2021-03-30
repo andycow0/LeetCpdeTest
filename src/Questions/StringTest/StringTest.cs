@@ -3,43 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace src.Questions.StringTest
-{
-    public class StringTest
-    {
-        public static bool IsValid(string s)
-        {
-            var stack = new Stack<char>();
+namespace src.Questions.StringTest {
+    public class StringTest {
+        public static bool IsValid (string s) {
+            var stack = new Stack<char> ();
 
-            var mapping = new Dictionary<char, char>() { { ')', '(' }, { ']', '[' }, { '}', '{' }
+            var mapping = new Dictionary<char, char> () { { ')', '(' }, { ']', '[' }, { '}', '{' }
                 };
 
-            for (var i = 0; i < s.Length; i++)
-            {
+            for (var i = 0; i < s.Length; i++) {
                 var now = s[i];
 
-                if (stack.Count() > 0 && mapping.TryGetValue(now, out char value))
-                {
-                    if (stack.First() == value)
-                    {
-                        stack.Pop();
+                if (stack.Count () > 0 && mapping.TryGetValue (now, out char value)) {
+                    if (stack.First () == value) {
+                        stack.Pop ();
+                    } else {
+                        stack.Push (now);
                     }
-                    else
-                    {
-                        stack.Push(now);
-                    }
-                }
-                else
-                {
-                    stack.Push(now);
+                } else {
+                    stack.Push (now);
                 }
             }
 
-            return stack.Count() == 0;
+            return stack.Count () == 0;
         }
 
-        public static int FirstUniqChar(string s)
-        {
+        public static int FirstUniqChar (string s) {
 
             // if (s.Length == 1) return 0;
 
@@ -59,44 +48,29 @@ namespace src.Questions.StringTest
 
             // return -1;
 
-            var dic = new Dictionary<char, int>();
+            var dic = new Dictionary<char, int> ();
 
-            for (var i = 0; i < s.Length; i++)
-            {
-                if (dic.TryGetValue(s[i], out int nums))
-                {
+            for (var i = 0; i < s.Length; i++) {
+                if (dic.TryGetValue (s[i], out int nums)) {
                     dic[s[i]] += 1;
-                }
-                else
-                {
-                    dic.Add(s[i], 1);
+                } else {
+                    dic.Add (s[i], 1);
                 }
             }
 
-            foreach (var item in dic)
-            {
-                if (item.Value == 1)
-                {
-                    return s.IndexOf(item.Key);
+            foreach (var item in dic) {
+                if (item.Value == 1) {
+                    return s.IndexOf (item.Key);
                 }
             }
             return -1;
         }
 
-        public static int RomanToInt(string s)
-        {
-            var dic = new Dictionary<char, int>() {
-                { 'I', 1 },
-                { 'V', 5 },
-                { 'X', 10 },
-                { 'C', 100 },
-                { 'L', 50 },
-                { 'D', 500 },
-                { 'M', 1000 }
-            };
+        public static int RomanToInt (string s) {
+            var dic = new Dictionary<char, int> () { { 'I', 1 }, { 'V', 5 }, { 'X', 10 }, { 'C', 100 }, { 'L', 50 }, { 'D', 500 }, { 'M', 1000 }
+                };
 
-            if (s.Length < 1)
-            {
+            if (s.Length < 1) {
                 return 0;
             }
 
@@ -104,16 +78,12 @@ namespace src.Questions.StringTest
             var i = s.Length - 1;
             var preValue = 0;
 
-            while (i > -1)
-            {
-                dic.TryGetValue(s[i], out int currValue);
+            while (i > -1) {
+                dic.TryGetValue (s[i], out int currValue);
 
-                if (preValue / currValue == 5 || preValue / currValue == 10)
-                {
+                if (preValue / currValue == 5 || preValue / currValue == 10) {
                     sum -= currValue;
-                }
-                else
-                {
+                } else {
                     sum += currValue;
                 }
 
@@ -124,24 +94,19 @@ namespace src.Questions.StringTest
             return sum;
         }
 
-        public static int StrStr(string haystack, string needle)
-        {
-            if (haystack == needle)
-            {
+        public static int StrStr (string haystack, string needle) {
+            if (haystack == needle) {
                 return 0;
             }
             var i = 0;
 
-            while (i < haystack.Length)
-            {
-                if (i + needle.Length - 1 > haystack.Length - 1)
-                {
+            while (i < haystack.Length) {
+                if (i + needle.Length - 1 > haystack.Length - 1) {
                     return -1;
                 }
-                var now = haystack.Substring(i, needle.Length);
+                var now = haystack.Substring (i, needle.Length);
 
-                if (now == needle)
-                {
+                if (now == needle) {
                     return i;
                 }
                 i++;
@@ -150,129 +115,100 @@ namespace src.Questions.StringTest
             return -1;
         }
 
-        public static string Multiply(string num1, string num2)
-        {
+        public static string Multiply (string num1, string num2) {
             var carry = 0;
-            var list = new Stack<int>();
+            var list = new Stack<int> ();
 
-            for (int i = num1.Length - 1, j = num2.Length - 1
-                ; i > -1 || j > -1
-                ; i--, j--)
-            {
-                var val1 = i < 0 ? 0 : Convert.ToInt16(num1[i].ToString());
-                var val2 = j < 0 ? 0 : Convert.ToInt16(num2[j].ToString());
+            for (int i = num1.Length - 1, j = num2.Length - 1; i > -1 || j > -1; i--, j--) {
+                var val1 = i < 0 ? 0 : Convert.ToInt16 (num1[i].ToString ());
+                var val2 = j < 0 ? 0 : Convert.ToInt16 (num2[j].ToString ());
                 var sum = val1 * val2 + carry;
 
-                list.Push(sum % 10);
+                list.Push (sum % 10);
                 carry = sum / 10;
             }
 
-            if (carry > 0)
-            {
-                list.Push(1);
+            if (carry > 0) {
+                list.Push (1);
             }
 
             var result = string.Empty;
 
-            while (list.Count > 0)
-            {
-                result += list.Pop().ToString();
+            while (list.Count > 0) {
+                result += list.Pop ().ToString ();
             }
 
             return result;
         }
 
-        public static int LengthOfLastWord(string s)
-        {
-            s = s.Trim();
-            if (s.Length < 1)
-            {
-                return 0;
+        public static int LengthOfLastWord (string s) {
+
+            s = s.Trim ();
+
+            if (s.Length < 1) return 0;
+
+            while (s.Length > 0) {
+
+                var spaceIdx = s.IndexOf (' ');
+
+                if (spaceIdx < 0) {
+                    return s.Length;
+                } else {
+                    s = s.Substring (spaceIdx + 1, s.Length - spaceIdx - 1);
+                }
             }
 
-            var list = new List<string>();
-
-            while (!string.IsNullOrEmpty(s))
-            {
-                var spaceIdx = s.IndexOf(' ');
-
-                if (spaceIdx < 0)
-                {
-                    list.Add(s.Substring(0, s.Length));
-                    break;
-                }
-                else
-                {
-                    list.Add(s.Substring(0, spaceIdx));
-                }
-                var nextIdx = spaceIdx + 1;
-                s = s.Substring(nextIdx, s.Length - nextIdx);
-            }
-
-            return list.Last().Length;
+            return s.Length;
         }
 
-        public static string AddStrings(string num1, string num2)
-        {
+        public static string AddStrings (string num1, string num2) {
             var carry = 0;
-            var list = new Stack<int>();
+            var list = new Stack<int> ();
 
-            for (int i = num1.Length - 1, j = num2.Length - 1
-                ; i > -1 || j > -1
-                ; i--, j--)
-            {
-                var val1 = i < 0 ? 0 : Convert.ToInt16(num1[i].ToString());
-                var val2 = j < 0 ? 0 : Convert.ToInt16(num2[j].ToString());
+            for (int i = num1.Length - 1, j = num2.Length - 1; i > -1 || j > -1; i--, j--) {
+                var val1 = i < 0 ? 0 : Convert.ToInt16 (num1[i].ToString ());
+                var val2 = j < 0 ? 0 : Convert.ToInt16 (num2[j].ToString ());
                 var sum = val1 + val2 + carry;
 
-                list.Push(sum % 10);
+                list.Push (sum % 10);
                 carry = sum / 10;
             }
 
-            if (carry == 1)
-            {
-                list.Push(1);
+            if (carry == 1) {
+                list.Push (1);
             }
 
             var result = string.Empty;
 
-            while (list.Count > 0)
-            {
-                result += list.Pop().ToString();
+            while (list.Count > 0) {
+                result += list.Pop ().ToString ();
             }
 
             return result;
         }
 
-        public static bool IsPalindrome(string s)
-        {
-            s = s.ToLower();
+        public static bool IsPalindrome (string s) {
+            s = s.ToLower ();
 
             var target = string.Empty;
 
-            for (int i = 0; i < s.Length; i++)
-            {
-                if ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 48 && s[i] <= 57))
-                {
+            for (int i = 0; i < s.Length; i++) {
+                if ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 48 && s[i] <= 57)) {
                     target += s[i];
                 }
             }
 
             var j = target.Length - 1;
 
-            for (int i = 0; i < target.Length; i++)
-            {
-                if (i >= j)
-                {
+            for (int i = 0; i < target.Length; i++) {
+                if (i >= j) {
                     break;
                 }
-                if (target[i] != target[j])
-                {
+                if (target[i] != target[j]) {
                     return false;
                 }
                 j--;
             }
-
 
             return true;
         }
