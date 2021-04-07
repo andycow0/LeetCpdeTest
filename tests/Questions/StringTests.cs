@@ -119,5 +119,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 392. Is Subsequence
+        // https://leetcode.com/problems/is-subsequence/
+        [Test, Category ("StringTest")]
+        public void IsSubsequenceTest () {
+            // arrange
+            var s = "abc";
+            var t = "ahbgdc";
+            var expected = true;            
+            // actual
+            var actual = StringTest.IsSubsequence (s, t);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

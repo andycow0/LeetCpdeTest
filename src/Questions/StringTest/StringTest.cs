@@ -187,6 +187,29 @@ namespace src.Questions.StringTest {
             return result;
         }
 
+        public static bool IsSubsequence (string s, string t) {
+
+            var stack = new Stack<char> ();
+
+            for (var i = 0; i < s.Length; i++) {
+                stack.Push (s[i]);
+            }
+
+            for (var i = t.Length - 1; i > -1; i--) {
+                var current = t[i];
+                if (stack.Count == 0) {
+                    return true;
+                }
+                var lastStack = stack.First ();
+
+                if (current == lastStack) {
+                    stack.Pop ();
+                }
+            }
+
+            return stack.Count == 0;
+        }
+
         public static bool IsPalindrome (string s) {
             s = s.ToLower ();
 
