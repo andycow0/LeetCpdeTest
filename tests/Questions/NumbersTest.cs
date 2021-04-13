@@ -119,5 +119,17 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
+        // 367. Valid Perfect Square
+        // https://leetcode.com/problems/valid-perfect-square/
+        [Test, Category ("NumbersTest")]
+        public void IsPerfectSquareTest () {
+            // arrange
+            var n = 14;
+            var expected = true;
+            // actual
+            bool actual = NumbersTest.IsPerfectSquare (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
