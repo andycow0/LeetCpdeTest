@@ -138,19 +138,22 @@ namespace LeetCodeTest.Questions {
 
         public static bool IsPerfectSquare (int num) {
 
-            if (num < 2) {
-                return true;
-            }
-
-            var i = 2;
+            var i = 1;
             var sq = i * i;
-            while (sq < num) {
+
+            while (i <= num / i) {
                 if (sq == num) return true;
                 i++;
                 sq = i * i;
             }
 
-            return sq == num;
+            return false;
+
+            // #online solution.
+            // for (int i = 1; i <= num / i; i++) {
+            //     if (i * i == num) return true;
+            // }
+            // return false;
         }
     }
 }

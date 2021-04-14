@@ -125,7 +125,7 @@ namespace tests.Questions {
         public void IsPerfectSquareTest () {
             // arrange
             var n = 14;
-            var expected = true;
+            var expected = false;
             // actual
             bool actual = NumbersTest.IsPerfectSquare (n);
             // assert
