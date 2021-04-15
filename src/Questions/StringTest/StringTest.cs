@@ -187,6 +187,20 @@ namespace src.Questions.StringTest {
             return result;
         }
 
+        public static int TitleToNumber (string columnTitle) {
+            var sum = 0;
+            var i = 0;
+
+            while (columnTitle.Length > 0) {
+                var value = columnTitle[columnTitle.Length - 1] - 64;
+                sum += value * (int) Math.Pow (26, i);
+                columnTitle = columnTitle.Substring (0, columnTitle.Length - 1);
+                i++;
+            }
+
+            return sum;
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();

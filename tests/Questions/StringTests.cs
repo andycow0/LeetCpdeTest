@@ -133,5 +133,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 171. Excel Sheet Column Number
+        // https://leetcode.com/problems/excel-sheet-column-number/
+        [Test, Category ("StringTest")]
+        public void TitleToNumberTest () {
+            // arrange
+            var columnTitle = "AB"; // 26^1 + 1*26^0
+                            //"ABC" // 26^2 + 2*26^1 + 3*26^2
+            var expected = 27;
+            // actual
+            var actual = StringTest.TitleToNumber (columnTitle);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
