@@ -201,6 +201,25 @@ namespace src.Questions.StringTest {
             return sum;
         }
 
+        public static string ConvertToTitle (int n) {
+
+            var result = string.Empty;
+
+            while (n > 0) {
+                var r = n % 26;
+                int code = r + 64;
+                n = r == 0 ? (n - 1) / 26 : n / 26; // n -1 => when r is 0 for 'Z'
+                code = r == 0 ? 90 : r + 64;
+                result = (char) code + result;
+
+                // if (r == 0 && n == 1) {
+                //     break;
+                // }
+            }
+
+            return result;
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();

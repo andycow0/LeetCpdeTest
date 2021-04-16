@@ -147,5 +147,22 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 168. Excel Sheet Column TitleToNumber
+        // https://leetcode.com/problems/excel-sheet-column-title/
+        [Test, Category ("StringTest")]
+        public void ConvertToTitleTest () {
+            // arrange
+            // var n = 1;
+            // var expected = "A";
+            var n = 27;
+            var expected = "AA";
+            // var n = 701;
+            // var expected = "AAA";
+            // actual
+            string actual = StringTest.ConvertToTitle (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
