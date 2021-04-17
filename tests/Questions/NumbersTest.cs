@@ -131,5 +131,23 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        
+        // 118. Pascal's Triangle
+        // https://leetcode.com/problems/pascals-triangle/
+        [Test, Category ("NumbersTest")]
+        public void GeneraTest () {
+            // arrange
+            //var n = 2147395599;
+            //var expected = 46339;
+            //var n = 8;
+            //var expected = 2;
+            var n = 5;
+            var expected = 2;
+            // actual
+            var actual = NumbersTest.Generate (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

@@ -155,5 +155,35 @@ namespace LeetCodeTest.Questions {
             // }
             // return false;
         }
+        
+        public static IList<IList<int>> Generate(int numRows)
+        {
+            var result = new List<IList<int>>(numRows);
+            IList<int> last=null;
+            for (var i = 0; i < numRows; i++)
+            {
+                var subSize = i+1;
+                var currList = new int[subSize];
+
+                for (var j = 0; j < subSize; j++)
+                {
+                    if (j==0||j==subSize-1)
+                    {
+                        currList[j]=1;
+                    }
+                    else
+                    {
+                        currList[j] = last[j-1] + last[j];
+                    }
+                    
+                }
+
+                last=currList;
+                result.Add(currList);
+            }
+            
+            return result;
+        }
+    
     }
 }
