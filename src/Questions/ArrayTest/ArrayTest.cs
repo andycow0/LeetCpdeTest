@@ -231,7 +231,22 @@ namespace src.Questions.ArrayTest {
         }
 
         public static int MaxSubArray (int[] nums) {
-            throw new NotImplementedException ();
+
+            var sum = 0;
+            var max = int.MinValue;
+
+            for (var i = 0; i < nums.Length; i++) {
+                sum += nums[i];
+                if (nums[i] > sum) {
+                    sum = nums[i];
+                }
+
+                if (sum > max) {
+                    max = sum;
+                }
+            }
+
+            return max;
         }
 
         public static int[] FindDisappearedNumbers (int[] nums) {

@@ -210,7 +210,7 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
-
+        
         // 448. Find All Numbers Disappeared in an Array
         // https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
         [Test]
@@ -388,7 +388,7 @@ namespace tests.Questions {
         public void SearchInsertTest () {
 
             // arrange
-            var nums = new int[] { 1,3,5,6 };
+            var nums = new int[] { 1, 3, 5, 6 };
             var n = 7;
             var expected = 4;
             // actual
@@ -397,4 +397,5 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
     }
+
 }
