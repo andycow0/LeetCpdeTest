@@ -484,5 +484,48 @@ namespace src.Questions.ArrayTest {
             return currentIdx;
 
         }
+
+        // public static int[] PlusOne (int[] digits) {
+        //     long sum = 0;
+        //     var j = 0;
+        //     for (var i = digits.Length; i > 0; i--) {
+        //         var mul = (long) Math.Pow (10, j);
+        //         sum += digits[i - 1] * mul;
+        //         j++;
+        //     }
+
+        //     sum++;
+
+        //     var result = new Stack<int> ();
+
+        //     while (sum /10> 0 || sum % 10 > 0) {
+        //         var num = sum % 10;
+        //         result.Push ((int)num);
+        //         sum = sum / 10;
+        //     }
+
+        //     return result.ToArray ();
+        // }
+
+        public static int[] PlusOne (int[] digits) {
+            var stack = new Stack<int> ();
+            var isCarry = false;
+            for (var i = digits.Length - 1; i > -1; i--) {
+
+                var digit = i == digits.Length - 1 ? digits[i] + 1 : digits[i];
+
+                if (isCarry) {
+                    digit++;
+                } else {
+
+                }
+                isCarry = digit > 9 ? true : false;
+                stack.Push (digit % 10);
+            }
+            if (isCarry) {
+                stack.Push (1);
+            }
+            return stack.ToArray ();
+        }
     }
 }
