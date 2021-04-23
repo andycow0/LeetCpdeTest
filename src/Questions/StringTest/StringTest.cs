@@ -220,6 +220,35 @@ namespace src.Questions.StringTest {
             return result;
         }
 
+        public static bool IsIsomorphic (string s, string t) {
+            if (s.Length != t.Length) {
+                return false;
+            }
+
+            var totalLength = s.Length;
+
+            var map = new Dictionary<char, char> ();
+
+            for (var i = 0; i < totalLength; i++) {
+                if (!map.TryGetValue (s[i], out char c)) {
+                    // prevent value is duplicated.
+                    foreach (var item in map) {
+                        if (item.Value == t[i]) {
+                            return false;
+                        }
+                    }
+                    map.Add (s[i], t[i]);
+                    continue;
+                }
+
+                if (t[i] != c) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();

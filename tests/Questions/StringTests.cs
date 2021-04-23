@@ -127,7 +127,7 @@ namespace tests.Questions {
             // arrange
             var s = "abc";
             var t = "ahbgdc";
-            var expected = true;            
+            var expected = true;
             // actual
             var actual = StringTest.IsSubsequence (s, t);
             // assert
@@ -140,7 +140,7 @@ namespace tests.Questions {
         public void TitleToNumberTest () {
             // arrange
             var columnTitle = "AB"; // 26^1 + 1*26^0
-                            //"ABC" // 26^2 + 2*26^1 + 3*26^2
+            //"ABC" // 26^2 + 2*26^1 + 3*26^2
             var expected = 27;
             // actual
             var actual = StringTest.TitleToNumber (columnTitle);
@@ -159,8 +159,26 @@ namespace tests.Questions {
             var expected = "AA";
             // var n = 701;
             // var expected = "AAA";
+
             // actual
             string actual = StringTest.ConvertToTitle (n);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
+        // 205. Isomorphic Strings
+        // https://leetcode.com/problems/isomorphic-strings/
+        [Test, Category ("StringTest")]
+        [TestCase("egg", "add", true),
+        TestCase("paper", "title", true),
+        TestCase("badc", "baba", false)]
+        public void IsIsomorphicTest (string s, string t, bool expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.IsIsomorphic (s, t);
+
             // assert
             Assert.AreEqual (actual, expected);
         }
