@@ -170,14 +170,30 @@ namespace tests.Questions {
         // 205. Isomorphic Strings
         // https://leetcode.com/problems/isomorphic-strings/
         [Test, Category ("StringTest")]
-        [TestCase("egg", "add", true),
-        TestCase("paper", "title", true),
-        TestCase("badc", "baba", false)]
+        [TestCase ("egg", "add", true),
+            TestCase ("paper", "title", true),
+            TestCase ("badc", "baba", false)
+        ]
         public void IsIsomorphicTest (string s, string t, bool expected) {
             // arrange
 
             // actual
             var actual = StringTest.IsIsomorphic (s, t);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
+        // 290. Word Pattern
+        // https://leetcode.com/problems/word-pattern/
+        [Test, Category ("StringTest")]
+        [TestCase ("abba", "dog cat cat dog", true)]
+        [TestCase ("abba", "dog dog dog dog", false)]
+        public void WordPatternTest (string pattern, string s, bool expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.WordPattern (pattern, s);
 
             // assert
             Assert.AreEqual (actual, expected);

@@ -249,6 +249,37 @@ namespace src.Questions.StringTest {
             return true;
         }
 
+        public static bool WordPattern (string pattern, string s) {
+
+            var sArray = s.Split (' ');
+
+            if (pattern.Length != sArray.Length) {
+                return false;
+            }
+
+            if (pattern.Distinct ().Count () != sArray.Distinct ().Count ()) {
+                return false;
+            }
+
+            var map = new Dictionary<char, string> ();
+
+            for (var i = 0; i < pattern.Length; i++) {
+                var key = pattern[i];
+
+                if (map.TryGetValue (key, out string value)) {
+
+                    if (value != sArray[i]) {
+                        return false;
+                    }
+                    break;
+                }
+
+                map.Add (key, sArray[i]);
+            }
+
+            return true;
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();
