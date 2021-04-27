@@ -249,6 +249,26 @@ namespace src.Questions.ArrayTest {
             return max;
         }
 
+        public static int MaxProfitV2 (int[] nums) {
+            var maxProfit = 0;
+            var buyPrice = 0;
+            for (var i = 0; i < nums.Length; i++) {
+                if (i == 0) {
+                    buyPrice = nums[i];
+                } else {
+                    var currProfit = nums[i] - buyPrice;
+
+                    if (currProfit > maxProfit) {
+                        maxProfit = currProfit;
+                    }
+                    buyPrice = nums[i];
+
+                }
+            }
+
+            return maxProfit < 0 ? 0 : maxProfit;
+        }
+
         public static int[] FindDisappearedNumbers (int[] nums) {
             var numLength = nums.Length;
             var numDic = Enumerable.Range (1, numLength).ToDictionary (k => k, v => false);

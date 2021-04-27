@@ -198,5 +198,20 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 459. Repeated Substring Pattern
+        // https://leetcode.com/problems/repeated-substring-pattern/
+        [Test, Category ("StringTest")]
+        [TestCase ("abab", true)]
+        // [TestCase ("aba", false)]
+        public void RepeatedSubstringPatternTest (string s, bool expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.RepeatedSubstringPattern (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

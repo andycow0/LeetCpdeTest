@@ -280,6 +280,24 @@ namespace src.Questions.StringTest {
             return true;
         }
 
+        public static bool RepeatedSubstringPattern (string s) {
+            if (s.Length % 2 != 0) {
+                return false;
+            }
+
+            var map = new Dictionary<char, short> ();
+
+            for (var i = 0; i < s.Length; i++) {
+                if (!map.TryGetValue (s[i], out short nums)) {
+                    map.Add (s[i], 1);
+                } else {
+                    map[s[i]] = ++nums;
+                }
+            }
+
+            return !map.Any (r => r.Value != map.FirstOrDefault ().Value);
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();
