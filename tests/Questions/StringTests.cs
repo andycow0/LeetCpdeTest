@@ -203,7 +203,8 @@ namespace tests.Questions {
         // https://leetcode.com/problems/repeated-substring-pattern/
         [Test, Category ("StringTest")]
         [TestCase ("abab", true)]
-        // [TestCase ("aba", false)]
+        //[TestCase ("aba", false)]
+        //[TestCase ("abcabcabc", true)]
         public void RepeatedSubstringPatternTest (string s, bool expected) {
             // arrange
 

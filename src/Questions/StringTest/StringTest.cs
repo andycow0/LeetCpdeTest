@@ -281,22 +281,55 @@ namespace src.Questions.StringTest {
         }
 
         public static bool RepeatedSubstringPattern (string s) {
-            if (s.Length % 2 != 0) {
-                return false;
-            }
 
-            var map = new Dictionary<char, short> ();
+            var maxSize = s.Length / 2;
+            var allLength = s.Length;
+            var subString = string.Empty;
 
-            for (var i = 0; i < s.Length; i++) {
-                if (!map.TryGetValue (s[i], out short nums)) {
-                    map.Add (s[i], 1);
-                } else {
-                    map[s[i]] = ++nums;
+            for (var i = 0; i <= maxSize; i++) {
+                var count = 0;
+                subString += s[i];
+
+                // var j = 0;
+                // while (s.Length > 0) {
+                //     var subNow = s.Substring (j, subString.Length);
+
+                //     j += subString.Length;
+                //     s = s.Substring (j, s.Length - j);
+                // }
+
+                for (var j = 0; j < s.Length - 1; j = j + subString.Length) {
+                    var subNow = s.Substring (j, subString.Length);
+                    if (subNow == subString) {
+                        count++;
+                    }
+                }
+
+                if (count == allLength / (i + 1) &&
+                    allLength % (i + 1) == 0) {
+                    return true;
                 }
             }
 
-            return !map.Any (r => r.Value != map.FirstOrDefault ().Value);
+            return false;
         }
+
+        // public static bool RepeatedSubstringPattern (string s) {
+
+        //     var maxSize = s.Length / 2;
+
+        //     var subString = string.Empty;
+
+        //     for (var i = 0; i <= maxSize; i++) {
+
+        //         subString += s[i];
+
+        //         var subArry = s.Split (subString);
+
+        //     }
+
+        //     return false;
+        // }
 
         public static bool IsSubsequence (string s, string t) {
 
