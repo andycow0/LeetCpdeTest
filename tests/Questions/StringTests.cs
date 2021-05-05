@@ -202,9 +202,11 @@ namespace tests.Questions {
         // 459. Repeated Substring Pattern
         // https://leetcode.com/problems/repeated-substring-pattern/
         [Test, Category ("StringTest")]
-        [TestCase ("abab", true)]
+        [TestCase ("ab", false)]
+        //[TestCase ("abab", true)]
         //[TestCase ("aba", false)]
         //[TestCase ("abcabcabc", true)]
+        //[TestCase ("ababba", false)]
         public void RepeatedSubstringPatternTest (string s, bool expected) {
             // arrange
 

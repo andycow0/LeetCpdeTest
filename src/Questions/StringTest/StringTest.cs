@@ -290,16 +290,17 @@ namespace src.Questions.StringTest {
                 var count = 0;
                 subString += s[i];
 
-                // var j = 0;
-                // while (s.Length > 0) {
-                //     var subNow = s.Substring (j, subString.Length);
+                var subLength = subString.Length;
 
-                //     j += subString.Length;
-                //     s = s.Substring (j, s.Length - j);
-                // }
+                if (subString == s) {
+                    return false;
+                }
 
-                for (var j = 0; j < s.Length - 1; j = j + subString.Length) {
-                    var subNow = s.Substring (j, subString.Length);
+                for (var j = 0; j < s.Length - 1; j = j + subLength) {
+                    if (allLength - j < subLength) {
+                        continue;
+                    }
+                    var subNow = s.Substring (j, subLength);
                     if (subNow == subString) {
                         count++;
                     }
@@ -313,23 +314,6 @@ namespace src.Questions.StringTest {
 
             return false;
         }
-
-        // public static bool RepeatedSubstringPattern (string s) {
-
-        //     var maxSize = s.Length / 2;
-
-        //     var subString = string.Empty;
-
-        //     for (var i = 0; i <= maxSize; i++) {
-
-        //         subString += s[i];
-
-        //         var subArry = s.Split (subString);
-
-        //     }
-
-        //     return false;
-        // }
 
         public static bool IsSubsequence (string s, string t) {
 
