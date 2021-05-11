@@ -161,7 +161,7 @@ namespace tests.Questions {
             // actual
             // int actual = ArrayTest.MaxProfit (nums);
             int actual = ArrayTest.MaxProfitV2 (nums);
-            
+
             // assert
             Assert.AreEqual (actual, expected);
         }
@@ -410,6 +410,22 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
+        // 167. Two Sum II - Input array is sorted
+        // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+        [Test, Category ("ArrayTest")]
+        public void TwoSumIITest () {
+            // arrange
+            var numbers = new int[] { 1,2,3 };
+            var target = 5;
+            // var numbers = new int[] {-1, 0 };
+            // var target = -1;
+            var expected = new int[] { 1, 2 };
+            // actual
+            var actual = ArrayTest.TwoSumII (numbers, target);
+            var actual = ArrayTest.TwoSumII2 (numbers, target);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 
 }

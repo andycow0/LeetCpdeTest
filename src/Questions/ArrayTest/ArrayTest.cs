@@ -547,5 +547,48 @@ namespace src.Questions.ArrayTest {
             }
             return stack.ToArray ();
         }
+
+        public static int[] TwoSumII (int[] numbers, int target) {
+            var result = new int[2];
+
+            for (var i = 0; i < numbers.Length; i++) {
+                for (var j = i + 1; j < numbers.Length; j++) {
+                    var firstNum = numbers[i];
+                    var secNum = numbers[j];
+                    if (firstNum + secNum == target) {
+                        result[0] = i + 1;
+                        result[1] = j + 1;
+                        return result;
+                    }
+                }
+
+            }
+
+            return result;
+        }
+
+        public static int[] TwoSumII2 (int[] numbers, int target) {
+            var result = new int[2];
+
+            var start = 0;
+            var end = numbers.Length - 1;
+
+            while (start < end) {
+                var first = numbers[start];
+                var second = numbers[end];
+                var sum = first + second;
+                if (sum == target) {
+                    result[0] = start + 1;
+                    result[1] = end + 1;
+                    return result;
+                } else if (sum > target) {
+                    end--;
+                } else {
+                    start++;
+                }
+
+            }
+            return result;
+        }
     }
 }
