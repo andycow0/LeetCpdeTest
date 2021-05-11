@@ -415,14 +415,29 @@ namespace tests.Questions {
         [Test, Category ("ArrayTest")]
         public void TwoSumIITest () {
             // arrange
-            var numbers = new int[] { 1,2,3 };
+            var numbers = new int[] { 1, 2, 3 };
             var target = 5;
             // var numbers = new int[] {-1, 0 };
             // var target = -1;
             var expected = new int[] { 1, 2 };
             // actual
-            var actual = ArrayTest.TwoSumII (numbers, target);
+            // var actual = ArrayTest.TwoSumII (numbers, target);
             var actual = ArrayTest.TwoSumII2 (numbers, target);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
+        // 1800. Maximum Ascending Subarray Sum
+        // https://leetcode.com/problems/maximum-ascending-subarray-sum/
+        [Test, Category ("ArrayTest")]
+        public void MaxAscendingSumTest () {
+            // arrange
+            var nums = new int[] { 100, 10, 1 };
+            var expected = 100;
+
+            // actual            
+            var actual = ArrayTest.MaxAscendingSum (nums);
+
             // assert
             Assert.AreEqual (actual, expected);
         }
