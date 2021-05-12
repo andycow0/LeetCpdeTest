@@ -432,9 +432,14 @@ namespace tests.Questions {
         [Test, Category ("ArrayTest")]
         public void MaxAscendingSumTest () {
             // arrange
-            var nums = new int[] { 100, 10, 1 };
-            var expected = 100;
-
+            // var nums = new int[] { 100, 10, 1 };
+            // var expected = 100;
+            // var nums = new int[] { 12, 17, 15, 13, 10, 11, 12 };
+            // var expected = 33;
+            // var nums = new int[] { 10, 20, 30, 40, 50 };
+            // var expected = 150;
+            var nums = new int[] { 10,20,30,5,10,50 };
+            var expected = 65;
             // actual            
             var actual = ArrayTest.MaxAscendingSum (nums);
 

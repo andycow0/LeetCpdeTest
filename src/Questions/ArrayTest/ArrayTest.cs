@@ -592,22 +592,26 @@ namespace src.Questions.ArrayTest {
         }
 
         public static int MaxAscendingSum (int[] nums) {
-            var result = 0;
+
             var start = 0;
-            var list = new List<int> ();
             var max = 0;
+            var sum = 0;
+            var last = 0;
+
             while (start < nums.Length) {
-                if (start == 0) {
-                    list.Add (nums[0]);
-                    max = nums[0];
-                }
+                var currnt = nums[start];
 
-                if (true) {
-
+                if (currnt < last) {
+                    max = Math.Max (sum, max);
+                    sum = currnt;
+                } else {
+                    sum += currnt;
                 }
+                last = currnt;
+                start++;
             }
-
-            return result;
+            
+            return Math.Max (sum, max);
         }
     }
 }
