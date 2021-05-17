@@ -280,6 +280,10 @@ namespace src.Questions.StringTest {
             return true;
         }
 
+        public static int[] DiStringMatch (string s) {
+            throw new NotImplementedException ();
+        }
+
         public static bool RepeatedSubstringPattern (string s) {
 
             var maxSize = s.Length / 2;

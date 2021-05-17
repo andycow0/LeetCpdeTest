@@ -216,5 +216,20 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 942. DI String Match
+        // https://leetcode.com/problems/di-string-match/
+        [Test, Category ("StringTest")]
+        public void DiStringMatchTest () {
+            // arrange
+            var s = "IDID";
+            var expected = new int[] { 0, 4, 1, 3, 2 };
+
+            // actual
+            var actual = StringTest.DiStringMatch (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
