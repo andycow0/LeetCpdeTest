@@ -179,5 +179,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 278. First Bad Version
+        //https://leetcode.com/problems/first-bad-version/
+        [Test, Category ("NumbersTest")]
+        public void VersionControlTest () {
+            // arrange
+            var n = 5;
+            var expected = 4;
+            // actual
+            var actual = new VersionControl ().FirstBadVersion (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
     }
 }
