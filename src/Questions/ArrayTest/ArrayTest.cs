@@ -269,14 +269,11 @@ namespace src.Questions.ArrayTest {
             return maxProfit < 0 ? 0 : maxProfit;
         }
 
-        public static int MaxProfitII(int[] prices)
-        {
+        public static int MaxProfitII (int[] prices) {
             var maxProfit = 0;
-            for(var i = 1; i < prices.Length; i++)
-            {
-                if (prices[i] > prices[i-1])
-                {
-                    maxProfit += prices[i] - prices[i-1];
+            for (var i = 1; i < prices.Length; i++) {
+                if (prices[i] > prices[i - 1]) {
+                    maxProfit += prices[i] - prices[i - 1];
                 }
             }
             return maxProfit;
@@ -623,8 +620,19 @@ namespace src.Questions.ArrayTest {
                 last = currnt;
                 start++;
             }
-            
+
             return Math.Max (sum, max);
+        }
+
+        public static int ArrayPairSum (int[] nums) {
+            var sum = 0;
+            Array.Sort (nums);
+
+            for (var i = 0; i < nums.Length; i += 2) {
+                sum += Math.Min (nums[i], nums[i + 1]);
+            }
+
+            return sum;
         }
     }
 }

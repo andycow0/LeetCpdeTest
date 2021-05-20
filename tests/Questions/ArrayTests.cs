@@ -165,10 +165,10 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
-        
+
         // 122. Best Time to Buy and Sell Stock II
         // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
-         [Test, Category ("ArrayTests")]
+        [Test, Category ("ArrayTests")]
         public void MaxProfitTestII () {
             // arrange
             var nums = new int[] { 1, 5, 7, 3, 4, 6 };
@@ -457,7 +457,7 @@ namespace tests.Questions {
             // var expected = 33;
             // var nums = new int[] { 10, 20, 30, 40, 50 };
             // var expected = 150;
-            var nums = new int[] { 10,20,30,5,10,50 };
+            var nums = new int[] { 10, 20, 30, 5, 10, 50 };
             var expected = 65;
             // actual            
             var actual = ArrayTest.MaxAscendingSum (nums);
@@ -465,7 +465,21 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 561. Array Partition I
+        // https://leetcode.com/problems/array-partition-i/
+        [Test, Category ("ArrayTest")]
+        [TestCase(new int[] { 1,4,3,2 }, 4)]
+        [TestCase(new int[] { 6,2,6,5,1,2 }, 9)]
+        public void ArrayPairSumTest (int[] nums, int expected) {
+            // arrange            
+            
+            // actual            
+            var actual = ArrayTest.ArrayPairSum (nums);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 
-    
 }
