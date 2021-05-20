@@ -165,6 +165,25 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+        
+        // 122. Best Time to Buy and Sell Stock II
+        // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+         [Test, Category ("ArrayTests")]
+        public void MaxProfitTestII () {
+            // arrange
+            var nums = new int[] { 1, 5, 7, 3, 4, 6 };
+            var expected = 9;
+            //var nums = new int[] { 7, 6, 4, 3, 1 };
+            //var expected = 0;
+
+            // actual
+            // int actual = ArrayTest.MaxProfit (nums);
+            int actual = ArrayTest.MaxProfitII (nums);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
         // 217. Contains Duplicate
         // https://leetcode.com/problems/contains-duplicate/
         // Given an array of integers, find if the array contains any duplicates.
