@@ -193,5 +193,19 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
+        // 70. Climbing Stairs
+        // https://leetcode.com/problems/climbing-stairs/
+        [Test, Category ("NumbersTest.ClimbStairs")]
+        [TestCase (3, 3)]
+        [TestCase (4, 5)]
+        [TestCase (5, 8)]
+        public void ClimbStairsTest (int n, int expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.ClimbStairs (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

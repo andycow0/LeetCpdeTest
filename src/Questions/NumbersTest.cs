@@ -242,5 +242,26 @@ namespace LeetCodeTest.Questions {
             return result.ToString ();
         }
 
+        public static int ClimbStairs (int n) {
+            if (n == 1) {
+                return 1;
+            }
+
+            if (n == 2) {
+                return 2;
+            }
+
+            var last = 2;
+            var beforeLast = 1;
+            var result = 2;
+
+            for (var i = 3; i <= n; i++) {
+                result = beforeLast + last;
+                beforeLast = last;
+                last = result;
+            }
+
+            return result;
+        }
     }
 }
