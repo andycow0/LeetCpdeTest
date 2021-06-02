@@ -319,6 +319,49 @@ namespace src.Questions.StringTest {
             return false;
         }
 
+        public static string[] UncommonFromSentences (string s1, string s2) {
+
+            var dict = new Dictionary<string, int> ();
+
+            var s1Arr = s1.Split (" ");
+            var s2Arr = s2.Split (" ");
+
+            var maxLength = s1Arr.Length < s2Arr.Length ? s2Arr.Length : s1Arr.Length;
+
+            var s1Strings = new string[2];
+
+            for (var i = 0; i < maxLength; i++) {
+                if (i < s1Arr.Length) {
+                    s1Strings[0] = s1Arr[i];
+                }
+
+                if (i < s2Arr.Length) {
+                    s1Strings[1] = s2Arr[i];
+                }
+
+                if (!string.IsNullOrEmpty (s1Strings[0])) {
+                    if (dict.TryGetValue (s1Strings[0], out int count1)) {
+                        dict[s1Strings[0]] = ++count1;
+                    } else {
+                        dict.TryAdd (s1Strings[0], 1);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty (s1Strings[1])) {
+                    if (dict.TryGetValue (s1Strings[1], out int count2)) {
+                        dict[s1Strings[1]] = ++count2;
+                    } else {
+                        dict.TryAdd (s1Strings[1], 1);
+                    }
+                }
+
+                s1Strings[0] = string.Empty;
+                s1Strings[1] = string.Empty;
+            }
+
+            return dict.Where (d => d.Value == 1).Select (d => d.Key).ToArray ();
+        }
+
         public static bool IsSubsequence (string s, string t) {
 
             var stack = new Stack<char> ();

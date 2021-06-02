@@ -231,5 +231,24 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 884. Uncommon Words from Two Sentences
+        // https://leetcode.com/problems/uncommon-words-from-two-sentences/
+        [Test, Category ("StringTest")]
+        public void UncommonFromSentencesTest () {
+            // arrange
+            // var s1 = "this apple is sweet";
+            // var s2 = "this apple is sour";
+            // var expected = new string[] { "sweet","sour" };
+            var s1 = "apple apple";
+            var s2 = "banana";
+            var expected = new string[] { "banana" };
+            // actual
+            var actual = StringTest.UncommonFromSentences (s1, s2);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
     }
 }
