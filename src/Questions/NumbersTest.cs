@@ -290,5 +290,39 @@ namespace LeetCodeTest.Questions {
 
             return result;
         }
+
+        public static bool CheckPerfectNumber (int num) {
+            if (num == 0 || num % 2 != 0) {
+                return false;
+            }
+
+            var half = num / 2;
+            var i = 2;
+
+            var sum = 1;
+            var list = new List<int> ();
+
+            while (i < half) {
+                var q = num / i;
+                var r = num % i;
+
+                if (list.IndexOf (i) > 0) {
+                    break;
+                }
+
+                if (r == 0) {
+                    list.Add (q);
+                    list.Add (i);
+                }
+
+                i++;
+            }
+
+            for (var j = 0; j < list.Count; j++) {
+                sum += list[j];
+            }
+
+            return sum == num;
+        }
     }
 }

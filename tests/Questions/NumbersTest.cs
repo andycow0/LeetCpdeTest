@@ -221,5 +221,24 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 507. Perfect Number
+        // https://leetcode.com/problems/perfect-number/
+        [Test, Category ("NumbersTest")]
+        [TestCase (6, true)]
+        [TestCase (4, false)]
+        [TestCase (1, false)]
+        [TestCase (2, false)]
+         [TestCase (496, true)]
+        [TestCase (8128, true)]
+        [TestCase (120, false)]
+        public void CheckPerfectNumberTest (int num, bool expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.CheckPerfectNumber (num);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
