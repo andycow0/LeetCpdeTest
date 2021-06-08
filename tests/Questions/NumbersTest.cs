@@ -207,5 +207,19 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 461. Hamming Distance
+        // https://leetcode.com/problems/hamming-distance/
+        [Test, Category ("NumbersTest")]
+        [TestCase (1, 3, 1)]
+        [TestCase (1, 4, 2)]
+        public void HammingDistanceTest (int x, int y, int expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.HammingDistance (x, y);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }

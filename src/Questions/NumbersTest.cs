@@ -263,5 +263,32 @@ namespace LeetCodeTest.Questions {
 
             return result;
         }
+
+        public static int HammingDistance (int x, int y) {
+            if (x == y) {
+                return 0;
+            }
+            if (x < 0 || y < 0) {
+                return 0;
+            }
+            var max = x < y ? y : x;
+            var min = x < y ? x : y;
+
+            var result = 0;
+
+            while (max != 0) {
+                var rMax = max % 2;
+                var rMin = min % 2;
+
+                if (rMax != rMin) {
+                    result++;
+                }
+
+                max = max / 2;
+                min = min / 2;
+            }
+
+            return result;
+        }
     }
 }
