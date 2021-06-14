@@ -324,25 +324,56 @@ namespace LeetCodeTest.Questions {
 
             return sum == num;
         }
+
+        // public bool CheckPerfectNumber(int num) {
+        //     if(num <= 1)
+        //     {
+        //         return false;
+        //     }        
+        //     var sum = 1;        
+        //     for(var i = 2; i <= Math.Sqrt(num); i++)
+        //     {
+        //         if(num % i == 0)
+        //         {
+        //             sum += i;                
+        //             if(i != num / i)
+        //             {
+        //                 sum += num / i;
+        //             }            
+        //         }
+        //     }        
+        //     return sum == num;
+        // }
+
+        public static IList<int> SelfDividingNumbers (int left, int right) {
+            var result = new List<int> ();
+            for (var i = left; i <= right; i++) {
+                if (i % 10 == 0) {
+                    continue;
+                }
+
+                var current = i;
+                var isSelfDividNum = true;
+
+                while (current > 0) {
+                    var r = current % 10;
+                    var q = current / 10;
+
+                    if (r == 0 || i % r != 0) {
+                        isSelfDividNum = false;
+                        break;
+                    }
+
+                    current = q;
+                }
+
+                if (isSelfDividNum) {
+                    result.Add (i);
+                }
+            }
+
+            return result;
+        }
     }
-    // public bool CheckPerfectNumber(int num) {
-    //     if(num <= 1)
-    //     {
-    //         return false;
-    //     }        
-    //     var sum = 1;        
-    //     for(var i = 2; i <= Math.Sqrt(num); i++)
-    //     {
-    //         if(num % i == 0)
-    //         {
-    //             sum += i;                
-    //             if(i != num / i)
-    //             {
-    //                 sum += num / i;
-    //             }            
-    //         }
-    //     }        
-    //     return sum == num;
-    // }
-    
+
 }

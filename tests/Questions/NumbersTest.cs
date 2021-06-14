@@ -229,7 +229,7 @@ namespace tests.Questions {
         [TestCase (4, false)]
         [TestCase (1, false)]
         [TestCase (2, false)]
-         [TestCase (496, true)]
+        [TestCase (496, true)]
         [TestCase (8128, true)]
         [TestCase (120, false)]
         public void CheckPerfectNumberTest (int num, bool expected) {
@@ -239,6 +239,19 @@ namespace tests.Questions {
             var actual = NumbersTest.CheckPerfectNumber (num);
             // assert
             Assert.AreEqual (actual, expected);
+        }
+
+        // 728. Self Dividing Numbers
+        // https://leetcode.com/problems/self-dividing-numbers/
+        [TestCase (1, 22)]
+        [TestCase (47, 85)]
+        public void SelfDividingNumbersTest (int left, int right) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.SelfDividingNumbers (left, right);
+            // assert
+            // Assert.AreEqual (actual, expected);
         }
     }
 }
