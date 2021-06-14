@@ -253,5 +253,20 @@ namespace tests.Questions {
             // assert
             // Assert.AreEqual (actual, expected);
         }
+
+        // 1281. Subtract the Product and Sum of Digits of an Integer
+        // https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+        [TestCase (234, 15)]
+        [TestCase (4421, 21)]
+        public void SubtractProductAndSumTest (int n, int expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.SubtractProductAndSum (n);
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
     }
+
 }

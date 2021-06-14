@@ -374,6 +374,19 @@ namespace LeetCodeTest.Questions {
 
             return result;
         }
+
+        public static int SubtractProductAndSum (int n) {
+            var sum = 0;
+            var mul = 1;
+            while (n > 0) {
+                var digit = n % 10;
+                sum += digit;
+                mul *= digit;
+
+                n = n / 10;
+            }
+            return Math.Abs (mul - sum);
+        }
     }
 
 }
