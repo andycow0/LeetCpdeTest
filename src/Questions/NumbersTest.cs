@@ -375,6 +375,27 @@ namespace LeetCodeTest.Questions {
             return result;
         }
 
+        public static int MaximumProduct (int[] nums) {
+            
+            Array.Sort (nums);
+
+            var topProduct = 1;
+
+            for (var i = nums.Length - 1; i > nums.Length - 4; i--) {
+                topProduct = topProduct * nums[i];
+            }
+
+            var lowProduct = 1;
+
+            for (var i = 0; i < 2; i++) {
+                lowProduct = lowProduct * nums[i];
+            }
+
+            lowProduct = lowProduct * nums[nums.Length - 1];
+
+            return Math.Max (topProduct, lowProduct);
+        }
+
         public static int SubtractProductAndSum (int n) {
             var sum = 0;
             var mul = 1;

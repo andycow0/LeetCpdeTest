@@ -238,7 +238,7 @@ namespace tests.Questions {
             // actual
             var actual = NumbersTest.CheckPerfectNumber (num);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual (expected, actual);
         }
 
         // 728. Self Dividing Numbers
@@ -264,9 +264,23 @@ namespace tests.Questions {
             // actual
             var actual = NumbersTest.SubtractProductAndSum (n);
             // assert
-            Assert.AreEqual (actual, expected);
+            Assert.AreEqual (expected, actual);
+        }
+
+        // 628. Maximum Product of Three Numbers
+        // https://leetcode.com/problems/maximum-product-of-three-numbers/
+        [TestCase (new int[] { 3, 2, 1 }, 6)]
+        [TestCase (new int[] { 1, 2, 3, 4 }, 24)]
+        [TestCase (new int[] {-3, -2, -1 }, -6)]
+        [TestCase (new int[] {-100, -98, -1, 2, 3, 4 }, 39200)]
+        public void MaximumProductTest (int[] nums, int expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.MaximumProduct (nums);
+            // assert
+            Assert.AreEqual (expected, actual);
         }
 
     }
-
 }
