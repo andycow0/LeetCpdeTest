@@ -282,5 +282,34 @@ namespace tests.Questions {
             Assert.AreEqual (expected, actual);
         }
 
+        // 152. Maximum Product Subarray
+        // https://leetcode.com/problems/maximum-product-subarray/
+        [TestCase (new int[] {-2 }, -2)]
+        [TestCase (new int[] { 2, 3, -2, 4 }, 6)]
+        [TestCase (new int[] {-2, 0, -1 }, 0)]
+        public void MaxProductTest (int[] nums, int expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.MaxProduct (nums);
+            // assert
+            Assert.AreEqual (expected, actual);
+        }
+
+        // 342. Power of Four
+        // https://leetcode.com/problems/power-of-four/
+        [TestCase (6, false)]
+        [TestCase (2, false)]
+        [TestCase (1, true)]
+        [TestCase (16, true)]
+        [TestCase (17, false)]
+        public void IsPowerOfFourTest (int n, bool expected) {
+            // arrange
+
+            // actual
+            var actual = NumbersTest.IsPowerOfFour (n);
+            // assert
+            Assert.AreEqual (expected, actual);
+        }
     }
 }

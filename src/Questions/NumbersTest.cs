@@ -376,7 +376,7 @@ namespace LeetCodeTest.Questions {
         }
 
         public static int MaximumProduct (int[] nums) {
-            
+
             Array.Sort (nums);
 
             var topProduct = 1;
@@ -394,6 +394,39 @@ namespace LeetCodeTest.Questions {
             lowProduct = lowProduct * nums[nums.Length - 1];
 
             return Math.Max (topProduct, lowProduct);
+        }
+
+        public static int MaxProduct (int[] nums) {
+            int max = int.MinValue;
+
+            for (int low = 0; low < nums.Length; low++) {
+                int temp = 1;
+                for (int fast = low; fast < nums.Length; fast++) {
+                    temp = temp * nums[fast];
+                    max = Math.Max (max, temp);
+                }
+            }
+            return max;
+        }
+
+        public static bool IsPowerOfFour (int n) {
+            if (n < 0) return false;
+            var count = 0;
+
+            if (n == 1) {                
+                n = n / 4;
+            }
+
+            while (n > 1) {
+                //var q = n / 4;
+                var r = n % 4;
+                if (r != 0) {
+                    count++;
+                }
+                n = n / 4;
+            }
+
+            return count == 0;
         }
 
         public static int SubtractProductAndSum (int n) {
