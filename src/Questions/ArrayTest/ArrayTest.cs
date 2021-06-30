@@ -634,5 +634,28 @@ namespace src.Questions.ArrayTest {
 
             return sum;
         }
+        
+        public static int MinCostClimbingStairs (int[] cost) {
+            var i = 0;
+            for (i = 2; i < cost.Length; i++) {
+                cost[i] += Math.Min (cost[i - 1], cost[i - 2]);
+            }
+            return Math.Min (cost[i - 1], cost[i - 2]);
+        }
+        /*
+                public static int MinCostClimbingStairs (int[] cost) {
+                    var c1 = 0;
+                    var c2 = 0;
+
+                    for (var i = 0; i < cost.Length; i++) {
+                        var curr = Math.Min (c1, c2) + cost[i];
+                        c1 = c2;
+                        c2 = curr;
+                    }
+
+                    return Math.Min (c1, c2);
+                }
+        */
+
     }
 }

@@ -480,6 +480,21 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        // 746. Min Cost Climbing Stairs
+        // https://leetcode.com/problems/min-cost-climbing-stairs/
+        [Test, Category ("ArrayTest")]
+        [TestCase(new int[] { 10,15,20 }, 15)]
+        [TestCase(new int[] { 1,100,1,1,1,100,1,1,100,1 }, 6)]
+        public void MinCostClimbingStairsTest (int[] cost, int expected) {
+            // arrange            
+            
+            // actual            
+            var actual = ArrayTest.MinCostClimbingStairs (cost);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 
 }

@@ -4,14 +4,35 @@ using src.Questions.Numers;
 
 namespace tests.Questions {
     public class NumbersTests {
+
         [Test, Category ("NumbersTest")]
-        public void FibonacciSequenceTest () {
-            // arrange
-            var n = 4;
+        [TestCase (0, 1),
+            TestCase (1, 1),
+            TestCase (2, 2),
+            TestCase (3, 3),
+            TestCase (4, 5),
+            TestCase (5, 8)
+        ]
+        public void FibonacciSequenceTest (int n, int expected) {
             // actual
             var actual = NumbersTest.FibonacciSequence (n);
             // assert
-            // Assert.AreEqual(actual, expected);
+            Assert.AreEqual (actual, expected);
+        }
+
+        [Test, Category ("NumbersTest")]
+        [TestCase (0, 1),
+            TestCase (1, 1),
+            TestCase (2, 2),
+            TestCase (3, 6),
+            TestCase (4, 24),
+            TestCase (5, 120)
+        ]
+        public void FactorialTest (int n, int expected) {
+            // actual
+            var actual = NumbersTest.Factorial (n);
+            // assert
+            Assert.AreEqual (actual, expected);
         }
 
         [Test, Category ("NumbersTest")]

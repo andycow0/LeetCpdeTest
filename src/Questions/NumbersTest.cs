@@ -23,6 +23,17 @@ namespace LeetCodeTest.Questions {
             return result;
         }
 
+        public static int Factorial (int n) {
+            if (n == 0) {
+                return 1;
+            }
+            if (n == 1) {
+                return 1;
+            }
+
+            return n * Factorial (n - 1);
+        }
+
         public static int FibonacciSequence (int n) {
             if (n == 0) {
                 return 1;
@@ -413,7 +424,7 @@ namespace LeetCodeTest.Questions {
             if (n < 0) return false;
             var count = 0;
 
-            if (n == 1) {                
+            if (n == 1) {
                 n = n / 4;
             }
 
