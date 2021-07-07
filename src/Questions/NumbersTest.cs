@@ -452,6 +452,48 @@ namespace LeetCodeTest.Questions {
             }
             return Math.Abs (mul - sum);
         }
+
+        public static bool IsUgly (int n) {
+            var factors = new int[] { 2, 3, 5 };
+            n = Math.Abs (n);
+            while (n > 1) {
+                for (var i = 0; i < factors.Length; i++) {
+                    var r = n % factors[i];
+                    var q = n / factors[i];
+
+                    if (q != 0 && r == 0) {
+                        n = n / factors[i];
+                        break;
+                    }
+                    if (i == factors.Length - 1) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+        /*
+        public bool IsUgly (int n) {
+            if (n < 1)
+                return false;
+            while (true) {
+                if (n % 2 == 0)
+                    n = n / 2;
+
+                else if (n % 3 == 0)
+                    n = n / 3;
+
+                else if (n % 5 == 0)
+                    n = n / 5;
+
+                else
+                    break;
+            }
+
+            return n == 1;
+        }
+        */
     }
 
 }

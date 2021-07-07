@@ -332,5 +332,20 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (expected, actual);
         }
+
+        // 263. Ugly Number
+        // https://leetcode.com/problems/ugly-number/
+        [TestCase (1, true)]
+        [TestCase (4, true)]
+        [TestCase (7, false)]
+        [TestCase (8, true)]
+        [TestCase (14, false)]
+        public void IsUglyTest (int n, bool expected) {
+            // actual
+            var actual = NumbersTest.IsUgly (n);
+            // assert
+            Assert.AreEqual (expected, actual);
+        }
+
     }
 }
