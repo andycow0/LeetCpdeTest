@@ -473,27 +473,51 @@ namespace LeetCodeTest.Questions {
 
             return true;
         }
+
         /*
-        public bool IsUgly (int n) {
-            if (n < 1)
-                return false;
-            while (true) {
-                if (n % 2 == 0)
-                    n = n / 2;
+public bool IsUgly (int n) {
+   if (n < 1)
+       return false;
+   while (true) {
+       if (n % 2 == 0)
+           n = n / 2;
 
-                else if (n % 3 == 0)
-                    n = n / 3;
+       else if (n % 3 == 0)
+           n = n / 3;
 
-                else if (n % 5 == 0)
-                    n = n / 5;
+       else if (n % 5 == 0)
+           n = n / 5;
 
-                else
-                    break;
+       else
+           break;
+   }
+
+   return n == 1;
+}
+*/
+        public static int[] CountBits (int n) {
+            var result = new List<int> ();
+            for (var i = 0; i <= n; i++) {
+                var current = i;
+                var sum = 0;
+                while (current > 0) {
+                    var r = current % 2;
+                    if (r == 1) sum++;
+                    current = current / 2;
+                }
+                result.Add (sum);
             }
-
-            return n == 1;
+            return result.ToArray ();
         }
-        */
+
+        public static int[] CountBits2 (int n) {
+            var result = new int[n + 1];
+            for (var i = 0; i <= n; i++) {
+                result[i] = i % 2 + result[i / 2];
+            }
+            return result;
+        }
+
     }
 
 }

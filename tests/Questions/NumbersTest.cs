@@ -347,5 +347,22 @@ namespace tests.Questions {
             Assert.AreEqual (expected, actual);
         }
 
+        // 338. Counting Bits
+        // https://leetcode.com/problems/counting-bits/
+        [TestCase (2, new int[] { 0, 1, 1 })]
+        public void CountBitsTest (int n, int[] expected) {
+            // actual
+            var actual = NumbersTest.CountBits (n);
+            // assert
+            Assert.AreEqual (expected, actual);
+        }
+        
+        [TestCase (5, new int[] { 0, 1, 1 })]
+        public void CountBits2Test (int n, int[] expected) {
+            // actual
+            var actual = NumbersTest.CountBits2 (n);
+            // assert
+            Assert.AreEqual (expected, actual);
+        }
     }
 }
