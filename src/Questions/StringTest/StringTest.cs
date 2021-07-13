@@ -319,6 +319,22 @@ namespace src.Questions.StringTest {
             return false;
         }
 
+        public static string ReverseWords (string s) {
+            var result = string.Empty;
+            var array = s.Split (" ");
+            var stack = new Stack<string> ();
+
+            for (var i = 0; i < array.Length; i++) {
+                if (string.IsNullOrEmpty (array[i])) continue;
+
+                stack.Push (array[i]);
+            }
+
+            result = string.Join (" ", stack);
+
+            return result;
+        }
+
         public static string[] UncommonFromSentences (string s1, string s2) {
 
             var dict = new Dictionary<string, int> ();

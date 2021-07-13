@@ -250,5 +250,21 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
+        // 151. Reverse Words in a String
+        // https://leetcode.com/problems/reverse-words-in-a-string/
+        [Test, Category ("StringTest")]
+        [TestCase ("  hello world  ", "world hello"),
+            TestCase ("a good   example", "example good a"),
+            TestCase ("  Bob    Loves  Alice   ", "Alice Loves Bob")
+        ]
+        public void ReverseWordsTest (string s, string expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.ReverseWords (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
