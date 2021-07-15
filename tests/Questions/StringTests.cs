@@ -28,7 +28,7 @@ namespace tests.Questions {
             // arrange
             // var s = "leetcode";
             // var expected = 0;
-            var s = "loveleetcode";
+            var s = "leetcode";
             var expected = 2;
             // actual
             var actual = StringTest.FirstUniqChar (s);
@@ -262,6 +262,18 @@ namespace tests.Questions {
 
             // actual
             var actual = StringTest.ReverseWords (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
+        [Test, Category ("StringTest")]
+        [TestCase ("abcabcbb", 3)]
+        public void LengthOfLongestSubstringTest (string s, int expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.LengthOfLongestSubstring (s);
 
             // assert
             Assert.AreEqual (actual, expected);

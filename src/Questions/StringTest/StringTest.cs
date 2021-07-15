@@ -29,41 +29,37 @@ namespace src.Questions.StringTest {
         }
 
         public static int FirstUniqChar (string s) {
+            var map = new int[26];
+            //var result = 10001;
+            for (var i = 0; i < s.Length; i++) {
+                var idx = s[i] - 'a';
+                map[idx] += 1;
+            }
 
-            // if (s.Length == 1) return 0;
+            for (int i = 0; i < s.Length; i++) {
+                if (map[s[i] - 'a'] == 1) {
+                    return i;
+                }
+            }
+
+            return -1;
+
+            // var dic = new Dictionary<char, int> ();
 
             // for (var i = 0; i < s.Length; i++) {
-
-            //     var idx = -1;
-
-            //     if (i == s.Length - 1) {
-            //         return -1;
+            //     if (dic.TryGetValue (s[i], out int nums)) {
+            //         dic[s[i]] += 1;
             //     } else {
-            //         idx = s.Substring (i + 1, s.Length - i - 1).IndexOf (s[i]);
-            //     }
-            //     if (idx < 0) {
-            //         return i;
+            //         dic.Add (s[i], 1);
             //     }
             // }
 
+            // foreach (var item in dic) {
+            //     if (item.Value == 1) {
+            //         return s.IndexOf (item.Key);
+            //     }
+            // }
             // return -1;
-
-            var dic = new Dictionary<char, int> ();
-
-            for (var i = 0; i < s.Length; i++) {
-                if (dic.TryGetValue (s[i], out int nums)) {
-                    dic[s[i]] += 1;
-                } else {
-                    dic.Add (s[i], 1);
-                }
-            }
-
-            foreach (var item in dic) {
-                if (item.Value == 1) {
-                    return s.IndexOf (item.Key);
-                }
-            }
-            return -1;
         }
 
         public static int RomanToInt (string s) {
@@ -333,6 +329,11 @@ namespace src.Questions.StringTest {
             result = string.Join (" ", stack);
 
             return result;
+        }
+
+        public static int LengthOfLongestSubstring (string s) {
+
+            throw new NotImplementedException ();
         }
 
         public static string[] UncommonFromSentences (string s1, string s2) {
