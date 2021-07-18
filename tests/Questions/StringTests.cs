@@ -267,13 +267,25 @@ namespace tests.Questions {
             Assert.AreEqual (actual, expected);
         }
 
-        [Test, Category ("StringTest")]
+        [Test, Category ("StringTest.SlidingWindows")]
         [TestCase ("abcabcbb", 3)]
         public void LengthOfLongestSubstringTest (string s, int expected) {
             // arrange
 
             // actual
             var actual = StringTest.LengthOfLongestSubstring (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
+
+        [Test, Category ("StringTest.SlidingWindows")]
+        [TestCase ("xyzzaz", 1)]
+        public void CountGoodSubstringsTest (string s, int expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.CountGoodSubstrings (s);
 
             // assert
             Assert.AreEqual (actual, expected);

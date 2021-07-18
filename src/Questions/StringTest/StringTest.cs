@@ -332,8 +332,34 @@ namespace src.Questions.StringTest {
         }
 
         public static int LengthOfLongestSubstring (string s) {
+            var left = 0;
+            var right = 0;
+            var window = new List<int> ();
+            while (right < s.Length) {
+                right++;
+                while (true) {
+
+                }
+            }
 
             throw new NotImplementedException ();
+        }
+
+        public static int CountGoodSubstrings (string s) {
+            var left = 0;
+            var right = 0;
+            var count = 0;
+            while (right < s.Length) {
+                right++;
+                while (right - left == 3) {
+                    var subStr = s.Substring (left, 3);
+                    if (subStr[0] != subStr[1] && subStr[1] != subStr[2] && subStr[0] != subStr[2])
+                        count++;
+                    left++;
+                }
+            }
+
+            return count;
         }
 
         public static string[] UncommonFromSentences (string s1, string s2) {
