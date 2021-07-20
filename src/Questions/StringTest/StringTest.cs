@@ -362,6 +362,37 @@ namespace src.Questions.StringTest {
             return count;
         }
 
+        public static string DecodeString (string s) {
+            var t = string.Empty;
+            var numStack = new Stack<int> ();
+            var strStack = new Stack<string> ();
+
+            var num = 0;
+            for (var i = 0; i < s.Length; i++) {
+                var ch = s[i];
+                if (ch >= '0' && ch <= '9') {
+                    num = 10 * num + ch - '0';
+                } else if (ch == '[') {
+                    numStack.Push (num);
+                    strStack.Push (t);
+                    num = 0;
+                    t = string.Empty;
+                } else if (ch == ']') {
+                    var times = numStack.Pop ();
+
+                    for (var j = 0; j < times; j++) {
+                        strStack.Push (strStack.Pop () + t);
+                    }
+                    t = strStack.Peek (); //?
+                    strStack.Pop();
+                } else {
+                    t += ch;
+                }
+            }
+
+            return strStack.Count < 1 ? t : strStack.Pop ();
+        }
+
         public static string[] UncommonFromSentences (string s1, string s2) {
 
             var dict = new Dictionary<string, int> ();

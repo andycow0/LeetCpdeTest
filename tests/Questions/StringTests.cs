@@ -290,5 +290,20 @@ namespace tests.Questions {
             // assert
             Assert.AreEqual (actual, expected);
         }
+
+        [Test, Category ("StringTest.DecodeString")]
+        [TestCase ("3[a]2[bc]", "aaabcbc")]
+        // [TestCase ("3[a2[c]]", "accaccacc")]
+        // [TestCase ("2[abc]3[cd]ef", "abcabccdcdcdef")]
+        // [TestCase ("abc3[cd]xyz", "abccdcdcdxyz")]
+        public void DecodeStringTest (string s, string expected) {
+            // arrange
+
+            // actual
+            var actual = StringTest.DecodeString (s);
+
+            // assert
+            Assert.AreEqual (actual, expected);
+        }
     }
 }
